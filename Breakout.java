@@ -104,7 +104,9 @@ public class Breakout extends GraphicsProgram {
 	private void drawRow(double x, double y, Color color) { 
 		if (NBRICKS_PER_ROW %2 == 0) { 
 			drawRowEven(x, y, color); 
-		}
+		} else {
+			drawRowOdd(x, y, color);
+		} 
 	}
 	
 	private void drawRowEven(double x, double y, Color color){
