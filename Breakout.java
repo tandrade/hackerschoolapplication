@@ -77,10 +77,10 @@ public class Breakout extends GraphicsProgram {
 			drawRowEven(x, y+(3*brickDif)+(brickDif*i), Color.YELLOW); 
 		}
 		for (int i=1; i < 3; i++) { 
-			drawRowEven(x, y+(4*brickDif)+(brickDif*i), Color.GREEN); 
+			drawRowEven(x, y+(5*brickDif)+(brickDif*i), Color.GREEN); 
 		}
 		for (int i=1; i < 3; i++) { 
-			drawRowEven(x, y+(5*brickDif)+(brickDif*i), Color.CYAN);
+			drawRowEven(x, y+(7*brickDif)+(brickDif*i), Color.CYAN);
 		}
 	}
 
