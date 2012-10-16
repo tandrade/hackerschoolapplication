@@ -68,19 +68,19 @@ public class Breakout extends GraphicsProgram {
 	private void buildRows(int x, int y) { 
 		double brickDif = BRICK_HEIGHT + BRICK_SEP; 
 		for (int i=0; i < 2; i++) { 
-			drawRowEven(x, y + brickDif*i, Color.RED);
+			drawRow(x, y + brickDif*i, Color.RED);
 		} 
 		for (int i=1; i < 3; i++) { 
-			drawRowEven(x, y+brickDif+(brickDif*i), Color.ORANGE); 
+			drawRow(x, y+brickDif+(brickDif*i), Color.ORANGE); 
 		}
 		for (int i=1; i < 3; i++) { 
-			drawRowEven(x, y+(2*brickDif)+(brickDif*i), Color.YELLOW); 
+			drawRow(x, y+(2*brickDif)+(brickDif*i), Color.YELLOW); 
 		}
 		for (int i=1; i < 3; i++) { 
-			drawRowEven(x, y+(3*brickDif)+(brickDif*i), Color.GREEN); 
+			drawRow(x, y+(3*brickDif)+(brickDif*i), Color.GREEN); 
 		}
 		for (int i=1; i < 3; i++) { 
-			drawRowEven(x, y+(4*brickDif)+(brickDif*i), Color.CYAN);
+			drawRow(x, y+(4*brickDif)+(brickDif*i), Color.CYAN);
 		}
 	}
 	/*
@@ -100,6 +100,12 @@ public class Breakout extends GraphicsProgram {
 		add(brick); 
 	}
 	*/ 
+	
+	private void drawRow(double x, double y, Color color) { 
+		if (NBRICKS_ROW %2 == 0) { 
+			drawRowEven(x, y, color); 
+		}
+	}
 	
 	private void drawRowEven(double x, double y, Color color){
 		for (int i=0; i < NBRICKS_PER_ROW ; i++) { 
