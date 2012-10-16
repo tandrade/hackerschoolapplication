@@ -91,9 +91,11 @@ public class Breakout extends GraphicsProgram {
 		} 
 	}
 	
-	private void fillRow(double x_right, double x_left){ 
+	private void fillRow(double x_right, double x_left, Color color){ 
 		GRect brick_right = new GRect(x_right, BRICK_Y_OFFSET, BRICK_WIDTH, BRICK_HEIGHT);
 		GRect brick_left = new GRect(x_left, BRICK_Y_OFFSET, BRICK_WIDTH, BRICK_HEIGHT);
+		brick_right.setFilled(true); 
+		brick_right.setColor(color); 
 		add(brick_right);
 		add(brick_left); 
 	}
