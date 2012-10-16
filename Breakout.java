@@ -61,7 +61,7 @@ public class Breakout extends GraphicsProgram {
 /** Runs the Breakout program. */
 	public void run() {
 		for (int i=0; i < 2; i++) { 
-			drawRowEven(getWidth()/2 + BRICK_SEP/2, BRICK_Y_OFFSET + (i - 1)*BRICK_HEIGHT Color.RED);
+			drawRowEven(getWidth()/2 + BRICK_SEP/2, BRICK_Y_OFFSET + (i)*BRICK_HEIGHT, Color.RED);
 		} 
 		//buildRows(getWidth()/2 + BRICK_SEP, BRICK_Y_OFFSET, Color.RED); 
 	} 
