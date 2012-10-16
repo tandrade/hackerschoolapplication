@@ -86,7 +86,7 @@ public class Breakout extends GraphicsProgram {
 		for (int i=0; i < NBRICKS_PER_ROW ; i++) { 
 			double n = i/2;
 			double x_right = x + n*BRICK_WIDTH + n*BRICK_SEP; 
-			double x_left = x - (n +1)*BRICK_WIDTH + (n + 1)*BRICK_SEP; 
+			double x_left = x - (n +1)*BRICK_WIDTH - (n + 1)*BRICK_SEP; 
 			fillRow(x_right, x_left);
 		} 
 	}
