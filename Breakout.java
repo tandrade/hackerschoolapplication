@@ -64,7 +64,7 @@ public class Breakout extends GraphicsProgram {
 	} 
 	
 	private void buildRows() { 
-		for (int i=1; i < NBRICKS_PER_ROW; i++) { 
+		for (int i=1; i < (NBRICKS_PER_ROW + 1); i++) { 
 			buildBricks(i*BRICK_SEP + (i -1)*BRICK_WIDTH, BRICK_Y_OFFSET, Color.RED);
 		}
 	}
