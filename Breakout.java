@@ -82,12 +82,12 @@ public class Breakout extends GraphicsProgram {
 	}
 	*/ 
 	
-	private void drawRowEven(double x){
+	private void drawRowEven(double x, Color color){
 		for (int i=0; i < NBRICKS_PER_ROW ; i++) { 
 			double n = i/2;
 			double x_right = x + n*BRICK_WIDTH + n*BRICK_SEP; 
 			double x_left = x - (n +1)*BRICK_WIDTH - (n + 1)*BRICK_SEP; 
-			fillRow(x_right, x_left);
+			fillRow(x_right, x_left, color);
 		} 
 	}
 	
@@ -97,6 +97,8 @@ public class Breakout extends GraphicsProgram {
 		brick_right.setFilled(true); 
 		brick_right.setColor(color); 
 		add(brick_right);
+		brick_left.setFilled(true); 
+		brick_left.setColor(color); 
 		add(brick_left); 
 	}
 
