@@ -68,46 +68,30 @@ public class Breakout extends GraphicsProgram {
 	private void buildRows(int x, int y) { 
 		double brickDif = BRICK_HEIGHT + BRICK_SEP; 
 		for (int i=0; i < 2; i++) { 
-			drawRow(x, y + brickDif*i, Color.RED);
+			drawRowEven(x, y + brickDif*i, Color.RED);
 		} 
 		for (int i=1; i < 3; i++) { 
-			drawRow(x, y+brickDif+(brickDif*i), Color.ORANGE); 
+			drawRowEven(x, y+brickDif+(brickDif*i), Color.ORANGE); 
 		}
 		for (int i=1; i < 3; i++) { 
-			drawRow(x, y+(2*brickDif)+(brickDif*i), Color.YELLOW); 
+			drawRowEven(x, y+(2*brickDif)+(brickDif*i), Color.YELLOW); 
 		}
 		for (int i=1; i < 3; i++) { 
-			drawRow(x, y+(3*brickDif)+(brickDif*i), Color.GREEN); 
+			drawRowEven(x, y+(3*brickDif)+(brickDif*i), Color.GREEN); 
 		}
 		for (int i=1; i < 3; i++) { 
-			drawRow(x, y+(4*brickDif)+(brickDif*i), Color.CYAN);
+			drawRowEven(x, y+(4*brickDif)+(brickDif*i), Color.CYAN);
 		}
 	}
-	/*
-	private void buildRows(int x, int y, Color color) { 
-		buildBricks(x, y, Color.RED);
-		for (int i=0; i < (NBRICKS_PER_ROW)/2; i++) {
-			double n = i/2; 
-			double 
-			buildBricks(i*BRICK_SEP + (i -1)*BRICK_WIDTH, BRICK_Y_OFFSET, Color.RED);
-		}
-	}
+
 	
-	private void buildBricks(int x, int y, Color color) { 
-		GRect brick = new GRect(x, y, BRICK_WIDTH, BRICK_HEIGHT);
-		brick.setFilled(true);
-		brick.setColor(color);
-		add(brick); 
-	}
-	*/ 
-	
-	private void drawRow(double x, double y, Color color) { 
+	/**private void drawRow(double x, double y, Color color) { 
 		if (NBRICKS_PER_ROW %2 == 0) { 
 			drawRowEven(x, y, color); 
 		} else {
 			drawRowOdd(x, y, color);
 		} 
-	}
+	}*/
 	
 	private void drawRowEven(double x, double y, Color color){
 		for (int i=0; i < NBRICKS_PER_ROW ; i++) { 
@@ -115,8 +99,20 @@ public class Breakout extends GraphicsProgram {
 			double x_right = x + n*BRICK_WIDTH + n*BRICK_SEP; 
 			double x_left = x - (n +1)*BRICK_WIDTH - (n + 1)*BRICK_SEP; 
 			fillRow(x_right, x_left, y, color);
-		} 
+		}
 	}
+	
+	/*private void drawRowOdd(double x, double y, double count){
+		double first_x = x - (BRICK_WIDTH * 0.5);  
+		GRect brick = new GRect(first_x, y, BRICK_WIDTH, BRICK_HEIGHT);
+		add(brick); 
+		for (int i=1; i < count; i++) { 
+			double n = (i - 1)/2;
+			double x_right = first_x + (n + 1)*BRICK_WIDTH; 
+			double x_left = first_x - (n + 1)*BRICK_WIDTH;
+			fillRow(x_right, x_left, y);
+		}
+	} */
 	
 	private void fillRow(double x_right, double x_left, double y, Color color){ 
 		GRect brick_right = new GRect(x_right, y, BRICK_WIDTH, BRICK_HEIGHT);
