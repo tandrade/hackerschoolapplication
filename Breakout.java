@@ -65,7 +65,7 @@ public class Breakout extends GraphicsProgram {
 	} 
 	
 
-	public void mouseDragged(MouseEvent e) {
+	public void mouseMoved(MouseEvent e) {
 		double x = e.getX(); 
 		GRect box = new GRect(x, getHeight() - PADDLE_Y_OFFSET, PADDLE_WIDTH, PADDLE_HEIGHT);
 		box.setFilled(true); 
