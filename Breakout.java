@@ -92,9 +92,11 @@ public class Breakout extends GraphicsProgram {
 	private static final double Y_VEL = 10; 
 	
 	
-	private void checkForCollision(double x, double y) { 
+	private void checkForCollision(double y) { 
 		if (ball.getY() < 0) { 
-			
+			y+= Y_VEL;  
+		} else { 
+			y-= Y_VEL; 
 		}
 		if (ball.getY() > BOX_HEIGHT) { 
 			
