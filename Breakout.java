@@ -88,7 +88,7 @@ public class Breakout extends GraphicsProgram {
 	private static final double Y_VEL = 10; 
 	
 	public void mouseClicked(MouseEvent e) { 
-		moveBall();
+		moveBall(BALL_X_START, BALL_Y_START);
 	}
 	
 	private void moveBall(double x, double y) { 
