@@ -69,6 +69,7 @@ public class Breakout extends GraphicsProgram {
 	
 	private void buildBar(double x, double y) { 
 		box = new GRect(x, y, PADDLE_WIDTH, PADDLE_HEIGHT);
+		add(box); 
 	}
 	
 	public void mouseMoved(MouseEvent e) {
