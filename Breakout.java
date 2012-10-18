@@ -73,7 +73,7 @@ public class Breakout extends GraphicsProgram {
 		buildBall(BALL_X_START, BALL_Y_START);
 		waitForClick(); 
 		while(true) { 
-			dropBall();  
+			dropBall(0);  
 		}
 	} 
 	
