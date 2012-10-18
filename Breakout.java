@@ -89,6 +89,7 @@ public class Breakout extends GraphicsProgram {
 		add(ball); 
 	}
 	
+	private void static X_BARRIER = -2*BALL_RADIUS; 
 	
 	private void checkForXCollision(int i) { 
 		if (ball.getX() < 0) {
