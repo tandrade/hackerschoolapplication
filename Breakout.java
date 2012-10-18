@@ -89,7 +89,7 @@ public class Breakout extends GraphicsProgram {
 		add(ball); 
 	}
 	
-	private int y; 
+	private int y =0; 
 	
 	private void checkForCollision(int i) {
 		while (ball.getY() < HEIGHT) { 
