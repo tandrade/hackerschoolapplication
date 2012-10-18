@@ -112,14 +112,13 @@ public class Breakout extends GraphicsProgram {
 	
 	private void goDown() {
 		while(ball.getY() < HEIGHT) { 
-			ball.move(0, Y_VEL)
+			ball.move(0, Y_VEL); 
 			pause(30);
 		}
 	}
 	
 	private void goUp() { 
 		while(ball.getY() > 0) { 
-			
 			ball.move(0, -Y_VEL);
 			pause(30);
 	}
