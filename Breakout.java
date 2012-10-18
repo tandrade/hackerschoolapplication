@@ -72,7 +72,9 @@ public class Breakout extends GraphicsProgram {
 		buildBar((getWidth() - PADDLE_WIDTH)/2, BOX_HEIGHT);
 		buildBall(BALL_X_START, BALL_Y_START);
 		waitForClick(); 
-		moveBall();  
+		while(true) { 
+			dropBall();  
+		}
 	} 
 	
 	/*
@@ -90,11 +92,7 @@ public class Breakout extends GraphicsProgram {
 	private static final double Y_VEL = 10; 
 	
 	private void moveBall() { 
-		while(true) { 
-			dropBall(0); 
-		}
-				
-				ball.getY() < (HEIGHT - (2*BALL_RADIUS))) { 
+		while(ball.getY() < (HEIGHT - (2*BALL_RADIUS))) { 
 			dropBall(0);
 		}
 		while(ball.getY() > 0) { 
@@ -102,8 +100,8 @@ public class Breakout extends GraphicsProgram {
 		}
 	}
 	
-	private void checkForCollision(double y) { 
-		if (y < 0) { 
+	private void checkForCollision(double x, double y) { 
+		if (x < 0) { 
 			
 		}
 	}
