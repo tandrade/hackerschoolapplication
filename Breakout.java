@@ -141,7 +141,7 @@ public class Breakout extends GraphicsProgram {
 	}
 	
 	private void goSE() { 
-		while(ball.getX() > 0) { 
+		while(ball.getX() > X_BARRIER) { 
 			while(ball.getY() < HEIGHT) { 
 				ball.move(VEL, -VEL);
 				pause(50); 
@@ -150,7 +150,7 @@ public class Breakout extends GraphicsProgram {
 	}
 	
 	private void goNE() { 
-		while(ball.getX() > 0) { 
+		while(ball.getX() > X_BARRIER) { 
 			while(ball.getY() > 0) { 
 				ball.move(VEL, VEL);
 				pause(50); 
