@@ -91,11 +91,7 @@ public class Breakout extends GraphicsProgram {
 	
 	private int y =0; 
 	
-	private void checkForCollision(int i) {
-		while (ball.getY() < HEIGHT) { 
-			goDown(); 
-		}
-		while (ball.getY() < 0) { 
+	private void checkForCollision(int i) { 
 		if (ball.getY() < 0) { 
 			goDown(); 
 		} else { 
@@ -104,7 +100,6 @@ public class Breakout extends GraphicsProgram {
 			} else { 
 				goDown(); 
 			}
-		} 
 		} 
 	}
 	
