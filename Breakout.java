@@ -99,6 +99,9 @@ public class Breakout extends GraphicsProgram {
 		if (ball.getX() < X_BARRIER) { 
 			dx = VEL; 
 		}
+		if (ball.getX() > getWidth()) { 
+			dx = -VEL; 
+		}
 	}
 	
 	private static int VEL = 15; 
