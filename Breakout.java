@@ -100,7 +100,7 @@ public class Breakout extends GraphicsProgram {
 		} 
 	}
 	
-	private static void Y_VEL = 15; 
+	private static int Y_VEL = 15; 
 	
 	private void goDown() { 
 		ball.move(0, Y_VEL);
