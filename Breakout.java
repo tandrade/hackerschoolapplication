@@ -72,10 +72,10 @@ public class Breakout extends GraphicsProgram {
 		buildBar((getWidth() - PADDLE_WIDTH)/2, BOX_HEIGHT);
 		buildBall(BALL_X_START, BALL_Y_START);
 		waitForClick();
-		for (int i=0; i<15; i++) { 
-			checkForXCollision(i);
-			checkForYCollision(i); 
-			moveBall(i); 
+		while(true) { 
+			checkForXCollision();
+			checkForYCollision(); 
+			moveBall(); 
 		}
 	} 
 	
