@@ -92,6 +92,9 @@ public class Breakout extends GraphicsProgram {
 	}
 	
 	private void dropBall(double x, double y) { 
+		while (ball.getY() < HEIGHT - BALL_RADIUS) { 
+			
+		}
 	}
 	
 	
