@@ -93,10 +93,8 @@ public class Breakout extends GraphicsProgram {
 	
 	private void moveBall(double x, double y) { 
 		while (ball.getY() < HEIGHT - 2*BALL_RADIUS) { 
-			remove(ball); 
 			y -= Y_VEL; 
 			ball.move(x, y); 
-			add(ball); 
 			pause(10);
 		}
 	}
