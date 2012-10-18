@@ -117,7 +117,7 @@ public class Breakout extends GraphicsProgram {
 	private static int VEL = 15; 
 	
 	private void goWest() { 
-		while(ball.getX() > WIDTH) { 
+		while(ball.getX() < WIDTH) { 
 			ball.move(VEL, 0); 
 			pause(30); 
 		}
