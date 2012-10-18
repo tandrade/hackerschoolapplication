@@ -100,6 +100,11 @@ public class Breakout extends GraphicsProgram {
 	}
 	
 
+	private void goDown() { 
+		ball.move(0, Y_VEL);
+		pause(30); 
+	}
+		
 	private void dropBall(double y) { 
 	 	
 		ball.move(0, y);
