@@ -67,12 +67,12 @@ public class Breakout extends GraphicsProgram {
 /* Method: run() */
 /** Runs the Breakout program. */
 	public void run() {
+		addMouseListeners();
 		buildRows(getWidth()/2 + BRICK_SEP/2, BRICK_Y_OFFSET);
 		buildBar((getWidth() - PADDLE_WIDTH)/2, BOX_HEIGHT);
 		buildBall(BALL_X_START, BALL_Y_START);
 		waitForClick(); 
-		dropBall(BALL_X_START, BALL_Y_START);
-		addMouseListeners(); 
+		dropBall(BALL_X_START, BALL_Y_START); 
 	} 
 	
 	/*
