@@ -98,6 +98,8 @@ public class Breakout extends GraphicsProgram {
 			}
 			if (ball.getY() > HEIGHT) { 
 				goNE(); 
+			} else { 
+				goNE(); 
 			}
 		} else { 
 			if (ball.getX() > WIDTH) {
