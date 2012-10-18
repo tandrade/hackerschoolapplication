@@ -91,7 +91,7 @@ public class Breakout extends GraphicsProgram {
 	
 	private static int X_BARRIER = -2*BALL_RADIUS; 
 	
-	private double y = 15; 
+	private double delta = 15; 
 	
 	private static int VEL = 15; 
 	
