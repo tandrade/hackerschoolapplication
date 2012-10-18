@@ -100,6 +100,9 @@ public class Breakout extends GraphicsProgram {
 		if (ball.getY() > BOX_HEIGHT) { 
 			y-= Y_VEL; 
 			dropBall(y); 
+		} else { 
+			y+= Y_VEL; 
+			dropBall(y); 
 		}
 		
 	}
