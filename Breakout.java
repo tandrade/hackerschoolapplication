@@ -89,10 +89,10 @@ public class Breakout extends GraphicsProgram {
 		add(ball); 
 	}
 	
-	private static final double Y_START = 0; 
+	private static final double Y_VEL = 10; 
 	
 	private void dropBall(double x, double y) { 
-			y += 30;
+			y += 10;
 			ball.move(0, y);
 			pause(60);
 	}
