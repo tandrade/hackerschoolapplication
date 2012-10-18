@@ -63,12 +63,11 @@ public class Breakout extends GraphicsProgram {
 /** Runs the Breakout program. */
 	public void run() {
 		buildRows(getWidth()/2 + BRICK_SEP/2, BRICK_Y_OFFSET);
-		buildBar((getWidth() - PADDLE_WIDTH)/2, getHeight() - PADDLE_Y_OFFSET); 
+		buildBar((getWidth() - PADDLE_WIDTH)/2, BOX_HEIGHT); 
 		addMouseListeners(); 
 	} 
 	
 	private GRect box; 
-	private double box_height = getHeight() - PADDLE_Y_OFFSET; 
 	
 	private void buildBar(double x, double y) { 
 		box = new GRect(x, y, PADDLE_WIDTH, PADDLE_HEIGHT);
@@ -82,7 +81,7 @@ public class Breakout extends GraphicsProgram {
 			x = APPLICATION_WIDTH - PADDLE_WIDTH; 
 		}
 		remove(box);
-		box.setLocation(x, box_height);  
+		box.setLocation(x, BOX_HEIGHT);  
 		add(box);
 	}
 	
