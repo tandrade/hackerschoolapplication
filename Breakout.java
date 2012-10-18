@@ -58,7 +58,9 @@ public class Breakout extends GraphicsProgram {
 	private static final int NTURNS = 3;
 	
 /** Y-coordinate for the box */ 	
-	private static final int BOX_HEIGHT = HEIGHT - PADDLE_Y_OFFSET - PADDLE_HEIGHT; 
+	private static final int BOX_HEIGHT = HEIGHT - PADDLE_Y_OFFSET - PADDLE_HEIGHT;
+	
+	private static final int BALL_START = getWidth()/2 - BALL_RADIUS; 
 
 /* Method: run() */
 /** Runs the Breakout program. */
@@ -66,7 +68,6 @@ public class Breakout extends GraphicsProgram {
 		buildRows(getWidth()/2 + BRICK_SEP/2, BRICK_Y_OFFSET);
 		buildBar((getWidth() - PADDLE_WIDTH)/2, BOX_HEIGHT);
 		buildBall(getWidth()/2 - BALL_RADIUS, BOX_HEIGHT - 150);
-		moveBall(getWidth()/2 - BALL_RADIUS, BOX_HEIGHT - 150);
 		addMouseListeners(); 
 	} 
 	
