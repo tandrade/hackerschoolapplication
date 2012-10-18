@@ -82,7 +82,7 @@ public class Breakout extends GraphicsProgram {
 	}
 	
 	private void checkCollision(double x) {
-		x_void = getWidth(); 
+		double x_void = getWidth(); 
 		if (x > x_void) { 
 			x = x_void; 
 		}
