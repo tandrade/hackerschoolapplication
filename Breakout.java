@@ -77,7 +77,7 @@ public class Breakout extends GraphicsProgram {
 		double x = e.getX(); 	
 		remove(box); 
 		checkCollision(x); 
-		box.setLocation(x1, getHeight() - PADDLE_Y_OFFSET);  
+		box.setLocation(x, getHeight() - PADDLE_Y_OFFSET);  
 		add(box);
 	}
 	
@@ -86,7 +86,6 @@ public class Breakout extends GraphicsProgram {
 		if (x > x_void) { 
 			x = x_void - PADDLE_WIDTH; 
 		}
-		return x; 
 	}
 	
 	
