@@ -76,12 +76,12 @@ public class Breakout extends GraphicsProgram {
 	public void mouseMoved(MouseEvent e) {
 		double x = e.getX(); 	
 		remove(box); 
-		double x1 = checkCollision(x); 
+		checkCollision(x); 
 		box.setLocation(x1, getHeight() - PADDLE_Y_OFFSET);  
 		add(box);
 	}
 	
-	private double checkCollision(double x) {
+	private void checkCollision(double x) {
 		double x_void = getWidth(); 
 		if (x > x_void) { 
 			x = x_void - PADDLE_WIDTH; 
