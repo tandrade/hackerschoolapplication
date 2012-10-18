@@ -73,7 +73,7 @@ public class Breakout extends GraphicsProgram {
 		buildBall(BALL_X_START, BALL_Y_START);
 		waitForClick(); 
 		while(ball.getY() < BOX_HEIGHT) { 
-			dropBall(BALL_X_START, BALL_Y_START);
+			dropBall(BALL_X_START, 0);
 		} 
 	} 
 	
@@ -92,7 +92,7 @@ public class Breakout extends GraphicsProgram {
 	private static final double Y_START = 0; 
 	
 	private void dropBall(double x, double y) { 
-			Y_START += 2;
+			y += 2;
 			ball.move(0, Y_START);
 			pause(60);
 	}
