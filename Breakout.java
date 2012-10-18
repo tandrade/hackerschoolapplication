@@ -72,6 +72,7 @@ public class Breakout extends GraphicsProgram {
 		buildBar((getWidth() - PADDLE_WIDTH)/2, BOX_HEIGHT);
 		buildBall(BALL_X_START, BALL_Y_START);
 		waitForClick(); 
+		moveBall(); 
 		while(ball.getY() < BOX_HEIGHT) { 
 			dropBall(0);
 		} 
