@@ -70,6 +70,7 @@ public class Breakout extends GraphicsProgram {
 		buildRows(getWidth()/2 + BRICK_SEP/2, BRICK_Y_OFFSET);
 		buildBar((getWidth() - PADDLE_WIDTH)/2, BOX_HEIGHT);
 		buildBall(BALL_X_START, BALL_Y_START);
+		dropBall(BALL_X_START, BALL_Y_START);
 		addMouseListeners(); 
 	} 
 	
