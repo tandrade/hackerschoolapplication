@@ -73,7 +73,7 @@ public class Breakout extends GraphicsProgram {
 		buildBall(BALL_X_START, BALL_Y_START);
 		waitForClick();
 		for (int i=0, i<1000, i++) { 
-			checkForCollision();
+			checkForCollision(i);
 		}
 	} 
 	
