@@ -87,12 +87,21 @@ public class Breakout extends GraphicsProgram {
 		add(ball); 
 	}
 	
-	private static final double Y_VEL = 10; 
 	
+	private void checkForCollision() { 
+		if (ball.getY() < 0) { 
+			
+		} else { 
+			if (ball.getY() > HEIGHT) { 
+				
+			} else { 
+				
+			}
+	}
 	
 
 	private void dropBall(double y) { 
-		checkForCollision(y); 	
+	 	
 		ball.move(0, y);
 		pause(60);
 	}
