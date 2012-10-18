@@ -119,7 +119,7 @@ public class Breakout extends GraphicsProgram {
 					goNW(); 
 				}
 			} else {
-				if (ball.getY()) < 0) { 
+				if (ball.getY() < 0) { 
 					goSW(); 
 				}
 				if (ball.getY() > HEIGHT) { 
