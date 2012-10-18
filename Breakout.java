@@ -56,6 +56,8 @@ public class Breakout extends GraphicsProgram {
 
 /** Number of turns */
 	private static final int NTURNS = 3;
+	
+	private static final int BOX_HEIGHT = HEIGHT - PADDLE_Y_OFFSET; 
 
 /* Method: run() */
 /** Runs the Breakout program. */
