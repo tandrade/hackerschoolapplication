@@ -115,14 +115,14 @@ public class Breakout extends GraphicsProgram {
 	
 	private static int VEL = 15; 
 	
-	private goWest() { 
+	private void goWest() { 
 		while(ball.getX() > WIDTH) { 
 			ball.move(VEL, 0); 
 			pause(30); 
 		}
 	}
 	
-	private goEast() { 
+	private void goEast() { 
 		while (ball.getX() > 0) { 
 			ball.move(-VEL, 0); 
 			pause(30); 
