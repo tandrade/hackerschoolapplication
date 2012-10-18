@@ -72,8 +72,6 @@ public class Breakout extends GraphicsProgram {
 		add(box);
 	}
 	
-	private GRect box; 
-	
 	
 /*
  * Build the bricks 	
