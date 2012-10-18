@@ -105,6 +105,7 @@ public class Breakout extends GraphicsProgram {
 				goDown(); 
 			}
 		} 
+		} 
 	}
 	
 	private static int Y_VEL = 15; 
