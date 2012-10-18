@@ -95,7 +95,7 @@ public class Breakout extends GraphicsProgram {
 		while (ball.getY() < HEIGHT - 2*BALL_RADIUS) { 
 			y -= Y_VEL; 
 			ball.move(x, y); 
-			pause(60);
+			pause(100);
 		}
 	}
 	
