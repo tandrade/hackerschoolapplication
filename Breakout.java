@@ -109,7 +109,6 @@ public class Breakout extends GraphicsProgram {
 	
 	private void dropBall(double y) { 
 		checkForCollision(y); 	
-		y += 10;
 		ball.move(0, y);
 		pause(60);
 	}
