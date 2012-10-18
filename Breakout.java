@@ -95,42 +95,7 @@ public class Breakout extends GraphicsProgram {
 	
 	private static int VEL = 15; 
 	
-	private void goSW() { 
-		while(ball.getX() < WIDTH) { 
-			while(ball.getY() < HEIGHT) { 
-				ball.move(-VEL, -VEL);
-				pause(50); 
-			}
-		}
-	}
-
-	private void goNW() { 
-		while(ball.getX() < WIDTH) { 
-			while(ball.getY() > 0) { 
-				ball.move(-VEL, VEL);
-				pause(50); 
-			}
-		}
-	}
 	
-	private void goSE() { 
-		while(ball.getX() > X_BARRIER) { 
-			while(ball.getY() < HEIGHT) { 
-				ball.move(VEL, -VEL);
-				pause(50); 
-			}
-		}
-	}
-	
-	private void goNE() { 
-		while(ball.getX() > X_BARRIER) { 
-			while(ball.getY() > 0) { 
-				ball.move(VEL, VEL);
-				pause(50); 
-			}
-		}
-	}
-
 
 
 	
