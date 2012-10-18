@@ -65,8 +65,23 @@ public class Breakout extends GraphicsProgram {
 	public void run() {
 		buildRows(getWidth()/2 + BRICK_SEP/2, BRICK_Y_OFFSET);
 		buildBar((getWidth() - PADDLE_WIDTH)/2, BOX_HEIGHT);
+		buildBall(getWidth()/2 - BALL_RADIUS, getHeight() - BOX_HEIGHT - 100);
 		addMouseListeners(); 
 	} 
+	
+	/*
+	 * Making the ball  
+	 */
+	
+	private GOval ball; 
+	
+	private void buildBall(double x, double y) { 
+		ball = new GOval (x, y, BALL_RADIUS, BALL_RADIUS);
+		ball.setFilled(true); 
+		add(ball); 
+	}
+	
+	
 	
 	/* 
 	 * Making the paddle 
