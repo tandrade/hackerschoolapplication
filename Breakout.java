@@ -60,7 +60,9 @@ public class Breakout extends GraphicsProgram {
 /** Y-coordinate for the box */ 	
 	private static final int BOX_HEIGHT = HEIGHT - PADDLE_Y_OFFSET - PADDLE_HEIGHT;
 	
-	private static final int BALL_START = WIDTH/2 - BALL_RADIUS; 
+	private static final int BALL_X_START = WIDTH/2 - BALL_RADIUS;
+	
+	private static final int BALL_Y_START = BOX_HEIGHT - 150; 
 
 /* Method: run() */
 /** Runs the Breakout program. */
@@ -84,6 +86,10 @@ public class Breakout extends GraphicsProgram {
 	}
 	
 	private static final double Y_VEL = 10; 
+	
+	public void mouseClicked(MouseEvent e) { 
+		moveBall()
+	}
 	
 	private void moveBall(double x, double y) { 
 		while (ball.getY() < HEIGHT - 2*BALL_RADIUS) { 
