@@ -90,7 +90,7 @@ public class Breakout extends GraphicsProgram {
 	}
 	
 	
-	private void checkForCollision() { 
+	private void checkForCollision(int i) { 
 		if (ball.getY() < 0) { 
 			goDown(); 
 		} else { 
