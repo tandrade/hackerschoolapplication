@@ -60,11 +60,20 @@ public class Breakout extends GraphicsProgram {
 /* Method: run() */
 /** Runs the Breakout program. */
 	public void run() {
-		buildRows(getWidth()/2 + BRICK_SEP/2, BRICK_Y_OFFSET);  
-		//buildRows(getWidth()/2 + BRICK_SEP, BRICK_Y_OFFSET, Color.RED); 
+		buildRows(getWidth()/2 + BRICK_SEP/2, BRICK_Y_OFFSET);
+		addMouseListeners(); 
 	} 
 	
+
+	private void mouseDragged(MouseEvent e) { 
+		double x = e.getX(); 
+		GRect box = new GRect(x, PADDLE_Y_OFFSET, PADDLE_WIDTH, PADDLE_HEIGHT);
+	}
 	
+	
+/*
+ * Build the bricks 	
+ */
 	private void buildRows(int x, int y) { 
 		double brickDif = BRICK_HEIGHT + BRICK_SEP; 
 		for (int i=0; i < 2; i++) { 
@@ -84,15 +93,6 @@ public class Breakout extends GraphicsProgram {
 		}
 	}
 
-	
-	/**private void drawRow(double x, double y, Color color) { 
-		if (NBRICKS_PER_ROW %2 == 0) { 
-			drawRowEven(x, y, color); 
-		} else {
-			drawRowOdd(x, y, color);
-		} 
-	}*/
-	
 	private void drawRow(double x, double y, Color color){
 		for (int i=0; i < NBRICKS_PER_ROW ; i++) { 
 			double n = i/2;
@@ -101,18 +101,6 @@ public class Breakout extends GraphicsProgram {
 			fillRow(x_right, x_left, y, color);
 		}
 	}
-	
-	/*private void drawRowOdd(double x, double y, double count){
-		double first_x = x - (BRICK_WIDTH * 0.5);  
-		GRect brick = new GRect(first_x, y, BRICK_WIDTH, BRICK_HEIGHT);
-		add(brick); 
-		for (int i=1; i < count; i++) { 
-			double n = (i - 1)/2;
-			double x_right = first_x + (n + 1)*BRICK_WIDTH; 
-			double x_left = first_x - (n + 1)*BRICK_WIDTH;
-			fillRow(x_right, x_left, y);
-		}
-	} */
 	
 	private void fillRow(double x_right, double x_left, double y, Color color){ 
 		GRect brick_right = new GRect(x_right, y, BRICK_WIDTH, BRICK_HEIGHT);
