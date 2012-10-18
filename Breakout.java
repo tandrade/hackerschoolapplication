@@ -86,7 +86,7 @@ public class Breakout extends GraphicsProgram {
 		if (x > x_void) { 
 			x = x_void; 
 		}
-		return x; 
+		return double x; 
 	}
 	
 	
