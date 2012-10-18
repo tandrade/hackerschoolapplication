@@ -83,13 +83,6 @@ public class Breakout extends GraphicsProgram {
 		add(box);
 	}
 	
-	private void checkCollision(double x) {
-		double x_void = WIDTH; 
-		if (x > x_void) { 
-			x = WIDTH - PADDLE_WIDTH; 
-		}
-	}
-	
 	
 /*
  * Build the bricks 	
