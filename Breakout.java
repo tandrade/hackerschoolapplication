@@ -66,6 +66,7 @@ public class Breakout extends GraphicsProgram {
 	} 
 	
 	private GRect box; 
+	private double box_height = getHeight() - PADDLE_Y_OFFSET; 
 	
 	private void buildBar(double x, double y) { 
 		box = new GRect(x, y, PADDLE_WIDTH, PADDLE_HEIGHT);
