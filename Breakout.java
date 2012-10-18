@@ -68,6 +68,7 @@ public class Breakout extends GraphicsProgram {
 
 	private void addBox() { 
 		GRect box = new GRect(100, getHeight() - PADDLE_Y_OFFSET, PADDLE_WIDTH, PADDLE_HEIGHT);
+		box.setFilled(true); 
 		add(box);
 	}
 	
