@@ -89,10 +89,6 @@ public class Breakout extends GraphicsProgram {
 	
 	private static final double Y_VEL = 10; 
 	
-	public void mouseClicked(MouseEvent e) { 
-		dropBall(BALL_X_START, BALL_Y_START);
-	}
-	
 	private void dropBall(double x, double y) { 
 		while (ball.getY() < HEIGHT - BOX_HEIGHT) { 
 			double dy = y += Y_VEL;
