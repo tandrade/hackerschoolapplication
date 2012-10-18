@@ -108,7 +108,7 @@ public class Breakout extends GraphicsProgram {
 	}
 	
 	private void goUp() { 
-		
+		ball.move(0, -Y_VEL);
 	}
 	
 	
