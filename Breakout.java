@@ -97,6 +97,7 @@ public class Breakout extends GraphicsProgram {
 			} else { 
 				goDown(); 
 			}
+		} 
 	}
 	
 
@@ -104,11 +105,9 @@ public class Breakout extends GraphicsProgram {
 		ball.move(0, Y_VEL);
 		pause(30); 
 	}
+	
+	private void goUp() { 
 		
-	private void dropBall(double y) { 
-	 	
-		ball.move(0, y);
-		pause(60);
 	}
 	
 	
