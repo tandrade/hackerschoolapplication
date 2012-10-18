@@ -93,7 +93,7 @@ public class Breakout extends GraphicsProgram {
 	
 	private void dropBall(double x, double y) { 
 			Y_START += 2;
-			ball.move(x, Y_START);
+			ball.move(0, Y_START);
 			pause(60);
 	}
 	
