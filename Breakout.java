@@ -60,7 +60,7 @@ public class Breakout extends GraphicsProgram {
 /** Y-coordinate for the box */ 	
 	private static final int BOX_HEIGHT = HEIGHT - PADDLE_Y_OFFSET - PADDLE_HEIGHT;
 	
-	private static final int BALL_START = getWidth()/2 - BALL_RADIUS; 
+	private static final int BALL_START = WIDTH/2 - BALL_RADIUS; 
 
 /* Method: run() */
 /** Runs the Breakout program. */
