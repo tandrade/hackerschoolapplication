@@ -90,15 +90,29 @@ public class Breakout extends GraphicsProgram {
 	private static final double Y_VEL = 10; 
 	
 	private void moveBall() { 
-		while(ball.getY() < (HEIGHT - (2*BALL_RADIUS))) { 
+		while(true) { 
+			dropBall(0); 
+		}
+				
+				ball.getY() < (HEIGHT - (2*BALL_RADIUS))) { 
 			dropBall(0);
+		}
+		while(ball.getY() > 0) { 
+			
+		}
+	}
+	
+	private void checkForCollision(double y) { 
+		if (y < 0) { 
+			
 		}
 	}
 	
 	private void dropBall(double y) { 
-			y += 10;
-			ball.move(0, y);
-			pause(60);
+		checkForCollision(y); 	
+		y += 10;
+		ball.move(0, y);
+		pause(60);
 	}
 	
 	
