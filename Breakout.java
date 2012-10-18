@@ -80,7 +80,7 @@ public class Breakout extends GraphicsProgram {
 			x = APPLICATION_WIDTH - PADDLE_WIDTH; 
 		}
 		remove(box);
-		box.setLocation(x, getHeight() - PADDLE_Y_OFFSET);  
+		box.setLocation(x, box_height);  
 		add(box);
 	}
 	
