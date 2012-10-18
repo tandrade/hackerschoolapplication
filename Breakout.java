@@ -66,6 +66,7 @@ public class Breakout extends GraphicsProgram {
 		buildRows(getWidth()/2 + BRICK_SEP/2, BRICK_Y_OFFSET);
 		buildBar((getWidth() - PADDLE_WIDTH)/2, BOX_HEIGHT);
 		buildBall(getWidth()/2 - BALL_RADIUS, BOX_HEIGHT - 150);
+		moveBall(getWidth()/2 - BALL_RADIUS, BOX_HEIGHT - 150);
 		addMouseListeners(); 
 	} 
 	
@@ -81,6 +82,14 @@ public class Breakout extends GraphicsProgram {
 		add(ball); 
 	}
 	
+	private static final double Y_VEL = 10; 
+	
+	private void moveBall(double x, double y) { 
+		while (ball.getY() < HEIGHT - 2*BALL_RADIUS) { 
+			remove(ball); 
+			ball.setLocation()
+		}
+	}
 	
 	
 	/* 
