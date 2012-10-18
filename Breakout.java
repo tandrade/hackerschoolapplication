@@ -101,7 +101,6 @@ public class Breakout extends GraphicsProgram {
 			}
 		} 
 	}
-
 	
 	private void checkForXCollision(int i) { 
 		if (ball.getX() < 0) { 
