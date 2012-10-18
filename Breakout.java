@@ -95,7 +95,6 @@ public class Breakout extends GraphicsProgram {
 			y += 2;
 			ball.move(x, y);
 			pause(60);
-		}
 	}
 	
 	
