@@ -101,19 +101,19 @@ public class Breakout extends GraphicsProgram {
 	private double dy = VEL; 
 	
 	private void checkForXCollision() { 
-		if (ball.getX() < X_BARRIER) { 
+		if (ball.getX() < X_BARRIER_LEFT) { 
 			dx = VEL; 
 		}
-		if (ball.getX() > getWidth()) { 
+		if (ball.getX() > X_BARRIER_RIGHT) { 
 			dx = -VEL; 
 		}
 	}
 	
 	private void checkForYCollision() { 
-		if (ball.getY() < 0) { 
+		if (ball.getY() < Y_BARRIER_UP) { 
 			dy = VEL; 
 		}
-		if (ball.getY() > getHeight()) { 
+		if (ball.getY() > Y_BARRIER_DOWN) { 
 			dy = -VEL; 
 		}
 	}
