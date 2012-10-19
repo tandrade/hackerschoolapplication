@@ -153,23 +153,23 @@ public class Breakout extends GraphicsProgram {
 /*
  * Build the bricks 	
  */
-	private static void int N_COLOR_ROWS = NBRICK_ROWS/5; 
+	private static final int N_COLOR_ROWS = NBRICK_ROWS/5; 
 	
 	private void buildRows(int x, int y) { 
 		double brickDif = BRICK_HEIGHT + BRICK_SEP; 
-		for (int i=0; i < (NBRICK_ROWS/5); i++) { 
+		for (int i=0; i < N_COLOR_ROWS; i++) { 
 			drawRow(x, y + brickDif*i, Color.RED);
 		} 
-		for (int i=1; i < (NBRICK_ROWS/5) +1 ; i++) { 
+		for (int i=1; i < N_COLOR_ROWS + 1 ; i++) { 
 			drawRow(x, y+brickDif+(brickDif*i), Color.ORANGE); 
 		}
-		for (int i=1; i < (NBRICK_ROWS/5) +1 ; i++) { 
+		for (int i=1; i < N_COLOR_ROWS + 1; i++) { 
 			drawRow(x, y+(3*brickDif)+(brickDif*i), Color.YELLOW); 
 		}
-		for (int i=1; i < (NBRICK_ROWS/5) + 1; i++) { 
+		for (int i=1; i < N_COLOR_ROWS + 1; i++) { 
 			drawRow(x, y+(5*brickDif)+(brickDif*i), Color.GREEN); 
 		}
-		for (int i=1; i < (NBRICK_ROWS/5) + 1; i++) { 
+		for (int i=1; i < N_COLOR_ROWS + 1; i++) { 
 			drawRow(x, y+(7*brickDif)+(brickDif*i), Color.CYAN);
 		}
 	}
