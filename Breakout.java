@@ -153,7 +153,8 @@ public class Breakout extends GraphicsProgram {
 /*
  * Build the bricks 	
  */
-	private void int N_COLOR_ROWS = NBRICK_ROWS/5; 
+	private static void int N_COLOR_ROWS = NBRICK_ROWS/5; 
+	
 	private void buildRows(int x, int y) { 
 		double brickDif = BRICK_HEIGHT + BRICK_SEP; 
 		for (int i=0; i < (NBRICK_ROWS/5); i++) { 
