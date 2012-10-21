@@ -207,7 +207,7 @@ public class Breakout extends GraphicsProgram {
 			if (ball.getY() > brick.getY() && ball.getY() < brick.getY() + BRICK_HEIGHT) {
 				GObj obj = brick; 
 				dx = -dx; 
-				remove(object); 
+				remove(obj); 
 			}
 		}
 	} 
