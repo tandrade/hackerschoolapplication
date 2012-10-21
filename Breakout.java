@@ -61,7 +61,6 @@ public class Breakout extends GraphicsProgram {
 	private static final int BOX_HEIGHT = HEIGHT - PADDLE_Y_OFFSET - PADDLE_HEIGHT;
 	
 	private static final int BALL_X_START = WIDTH/2 - BALL_RADIUS;
-	
 	private static final int BALL_Y_START = BOX_HEIGHT - 150; 
 
 /* Method: run() */
@@ -93,7 +92,7 @@ public class Breakout extends GraphicsProgram {
 	
 	private static final int X_BARRIER_LEFT = -2*BALL_RADIUS;
 	private static final int X_BARRIER_RIGHT = WIDTH + 2*BALL_RADIUS; 
-	private static final int Y_BARRIER_UP = 0; 
+	private static final int Y_BARRIER_UP = 10; 
 	private static final int Y_BARRIER_DOWN = HEIGHT - 2*BALL_RADIUS; 
 	private static final int VEL = 15;
 	
