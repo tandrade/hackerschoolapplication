@@ -200,7 +200,6 @@ public class Breakout extends GraphicsProgram {
 		checkLeft(); 
 		checkTop(); 
 		checkBottom(); 
-		dx = -dx; 
 	}
 	
 	private void checkRight() { 
