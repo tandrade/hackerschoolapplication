@@ -225,7 +225,7 @@ public class Breakout extends GraphicsProgram {
 	
 	private void checkBottom() {
 		GObject target = getElementAt(ball.getX() + BALL_RADIUS, ball.getY()); 
-		if (target != ball) { 
+		if (target != null) { 
 			if (target != ball && target != box) { 
 				dy = -dy; 
 				remove(target); 
