@@ -115,7 +115,8 @@ public class Breakout extends GraphicsProgram {
 			dy = VEL; 
 		}
 		if (ball.getY() > Y_BARRIER_DOWN) { 
-			endGame();  
+			//endGame();
+			dy = -VEL;
 		}
 	}
 	
