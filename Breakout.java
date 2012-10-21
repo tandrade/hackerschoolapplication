@@ -192,7 +192,33 @@ public class Breakout extends GraphicsProgram {
 		}
 	}
 	
-	private GRect brick; 
+	private GRect brick;
+	
+	private void checkBrickCollision() { 
+		checkRight(); 
+		checkLeft(); 
+		checkTop(); 
+		checkBottom(); 
+	}
+	
+	private void checkRight() { 
+		if (ball.getX() + 2*BALL_RADIUS > brick.getX()) { 
+			remove(brick); 
+		}
+	}
+	
+	private void checkLeft() { 
+		
+	}
+	
+	private void checkTop() { 
+		
+	}
+	
+	private void checkBottom() { 
+		
+	}
+	
 	
 	private void fillRow(double x_right, double x_left, double y, Color color){ 
 		brick = new GRect(x_right, y, BRICK_WIDTH, BRICK_HEIGHT);
