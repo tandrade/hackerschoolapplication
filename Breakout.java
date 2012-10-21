@@ -224,7 +224,7 @@ public class Breakout extends GraphicsProgram {
 	}
 	
 	private void checkBottom() {
-		GObject hitbrick = getElementAt(ball.getX(), ball.getY()); 
+		GObject hitbrick = getElementAt(ball.getX(), ball.getY() + 1); 
 		if (hitbrick != null) { 
 			if (hitbrick != ball && hitbrick != box) { 
 				dy = -dy; 
