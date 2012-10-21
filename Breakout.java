@@ -125,7 +125,7 @@ public class Breakout extends GraphicsProgram {
 	
 
 	private void checkForPaddle() { 
-		if (ball.getY() > box.getY() && ball.getX() > box.getX() && ball.getX() < box.getX() + PADDLE_LENGTH) { 
+		if (ball.getY() > box.getY() && ball.getX() > box.getX() && ball.getX() < box.getX() + PADDLE_WIDTH) { 
 			dy = VEL; 
 		}
 	}
