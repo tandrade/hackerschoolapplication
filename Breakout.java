@@ -62,7 +62,12 @@ public class Breakout extends GraphicsProgram {
 	
 	private static final int BALL_X_START = WIDTH/2 - BALL_RADIUS;
 	private static final int BALL_Y_START = BOX_HEIGHT - 150; 
-
+	private static final int X_BARRIER_LEFT = 2;
+	private static final int X_BARRIER_RIGHT = WIDTH - 2*BALL_RADIUS; 
+	private static final int Y_BARRIER_UP = 2*BALL_RADIUS; 
+	private static final int Y_BARRIER_DOWN = HEIGHT - 4*BALL_RADIUS; 
+	private static final int VEL = 15;
+	
 /* Method: run() */
 /** Runs the Breakout program. */
 	public void run() {
@@ -90,12 +95,7 @@ public class Breakout extends GraphicsProgram {
 		ball.setFilled(true); 
 		add(ball); 
 	}
-	
-	private static final int X_BARRIER_LEFT = 2;
-	private static final int X_BARRIER_RIGHT = WIDTH - 2*BALL_RADIUS; 
-	private static final int Y_BARRIER_UP = 2*BALL_RADIUS; 
-	private static final int Y_BARRIER_DOWN = HEIGHT - 4*BALL_RADIUS; 
-	private static final int VEL = 15;
+
 	
 	private double dx = VEL;
 	private double dy = VEL; 
@@ -192,15 +192,17 @@ public class Breakout extends GraphicsProgram {
 		}
 	}
 	
+	private GRect brick; 
+	
 	private void fillRow(double x_right, double x_left, double y, Color color){ 
-		GRect brick_right = new GRect(x_right, y, BRICK_WIDTH, BRICK_HEIGHT);
-		GRect brick_left = new GRect(x_left, y, BRICK_WIDTH, BRICK_HEIGHT);
-		brick_right.setFilled(true); 
-		brick_right.setColor(color); 
-		add(brick_right);
-		brick_left.setFilled(true); 
-		brick_left.setColor(color); 
-		add(brick_left); 
+		brick = new GRect(x_right, y, BRICK_WIDTH, BRICK_HEIGHT);
+		brick.setFilled(true); 
+		brick.setColor(color);
+		add(brick);
+		brick = new GRect(x_left, y, BRICK_WIDTH, BRICK_HEIGHT);
+		brick.setFilled(true); 
+		brick.setColor(color); 
+		add(brick); 
 	}
 
 }
