@@ -204,19 +204,17 @@ public class Breakout extends GraphicsProgram {
 	}
 	
 	private void checkRight() {
-		/*if (ball.getX() >= brick.getX()) { 
-			if (ball.getY() >= brick.getY() && ball.getY() <= brick.getY() + BRICK_HEIGHT) {
-				GObject hitbrick = getElementAt(ball.getX() - 2*BALL_RADIUS, ball.getY()); 
-				if (hitbrick == brick) { 
-					remove(brick); 
-					dx = -dx; 
-				}
+		GObject right = getElementAt(ball.getX() - 1, ball.getY() + BALL_RADIUS); 
+		if (right != null) { 
+			if (right != ball && right != box) { 
+				dx = -dx; 
+				remove(right); 
 			}
-		}*/
+		}
 	} 
 	
 	private void checkLeft() { 
-		GObject left = getElementAt(ball.getX() + 3*BALL_RADIUS, ball.getY()); 
+		GObject left = getElementAt(ball.getX() + 2*BALL_RADIUS + 1, ball.getY() + BALL_RADIUS); 
 		if (left != null) { 
 			if (left != ball && left != box) { 
 				dx = -dx; 
@@ -238,6 +236,7 @@ public class Breakout extends GraphicsProgram {
 			}
 		}
 	}
+	
 	
 	
 	private void fillRow(double x_right, double x_left, double y, Color color){ 
