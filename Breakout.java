@@ -216,7 +216,13 @@ public class Breakout extends GraphicsProgram {
 	} 
 	
 	private void checkLeft() { 
-		
+		GObject left = getElementAt(ball.getX() + 3*BALL_RADIUS, ball.getY()); 
+		if (left != null) { 
+			if (left != ball && left != box) { 
+				dx = -dx; 
+				remove(left); 
+			}
+		}
 	}
 	
 	private void checkTop() { 
@@ -224,11 +230,11 @@ public class Breakout extends GraphicsProgram {
 	}
 	
 	private void checkBottom() {
-		GObject target = getElementAt(ball.getX() + BALL_RADIUS, ball.getY()); 
-		if (target != null) { 
-			if (target != ball && target != box) { 
+		GObject bottom = getElementAt(ball.getX() + BALL_RADIUS, ball.getY()); 
+		if (bottom != null) { 
+			if (bottom != ball && bottom != box) { 
 				dy = -dy; 
-				remove(target); 
+				remove(bottom); 
 			}
 		}
 	}
