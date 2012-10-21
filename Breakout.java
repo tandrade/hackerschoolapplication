@@ -202,11 +202,14 @@ public class Breakout extends GraphicsProgram {
 		checkBottom(); 
 	}
 	
-	private void checkRight() { 
+	private void checkRight() {
 		if (ball.getX() + 2*BALL_RADIUS > brick.getX()) { 
 			if (ball.getY() > brick.getY() && ball.getY() < brick.getY() + BRICK_HEIGHT) {
-				remove(brick); 
-				dx = -dx; 
+				GObject hitbrick = getElementAt(ball.getX() + 2*BALL_RADIUS, ball.getY()); 
+				if (hitbrick == brick) { 
+					remove(brick); 
+					dx = -dx; 
+				}
 			}
 		}
 	} 
