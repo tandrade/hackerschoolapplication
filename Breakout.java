@@ -92,7 +92,7 @@ public class Breakout extends GraphicsProgram {
 	
 	private static final int X_BARRIER_LEFT = -2*BALL_RADIUS;
 	private static final int X_BARRIER_RIGHT = WIDTH + 2*BALL_RADIUS; 
-	private static final int Y_BARRIER_UP = 8; 
+	private static final int Y_BARRIER_UP = 5; 
 	private static final int Y_BARRIER_DOWN = HEIGHT - 2*BALL_RADIUS; 
 	private static final int VEL = 15;
 	
