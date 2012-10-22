@@ -110,8 +110,8 @@ public class Breakout extends GraphicsProgram {
 	/* Print "GAME OVER" to the screen */ 
 	private void makeLabel() { 
 		GLabel gameover = new GLabel("GAME OVER"); 
-		gameover.setLocation((getWidth() - gameover.getWidth())/2, HEIGHT/2);
 		gameover.setFont(new Font("Courier", Font.BOLD, 30));
+		gameover.setLocation((getWidth() - gameover.getWidth())/2, HEIGHT/2);
 		gameover.setColor(Color.WHITE);
 		add(gameover); 
 	}
