@@ -97,6 +97,7 @@ public class Breakout extends GraphicsProgram {
 	
 	private void makeLabel() { 
 		GLabel gameover = new GLabel("Game over", getWidth()/2, getHeight()/2);
+		add(gameover); 
 	}
 	
 	/*
