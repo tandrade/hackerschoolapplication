@@ -68,6 +68,8 @@ public class Breakout extends GraphicsProgram {
 	private static final int Y_BARRIER_DOWN = HEIGHT - 4*BALL_RADIUS; 
 	private static final int VEL = 15;
 	
+	private static final int N_COLOR_ROWS = NBRICK_ROWS/5; 
+	
 /* Method: run() */
 /** Runs the Breakout program. */
 	public void run() {
@@ -214,8 +216,10 @@ public class Breakout extends GraphicsProgram {
 /*
  * Build the bricks 	
  */
-	private static final int N_COLOR_ROWS = NBRICK_ROWS/5; 
+	/* making the brick */ 
+	private GRect brick;
 	
+	/* building the rows */ 
 	private void buildRows(int x, int y) { 
 		double brickDif = BRICK_HEIGHT + BRICK_SEP; 
 		for (int i=0; i < N_COLOR_ROWS; i++) { 
@@ -235,6 +239,7 @@ public class Breakout extends GraphicsProgram {
 		}
 	}
 
+	/* filling in the rows - part 1 */ 
 	private void drawRow(double x, double y, Color color){
 		for (int i=0; i < NBRICKS_PER_ROW ; i++) { 
 			double n = i/2;
@@ -244,8 +249,20 @@ public class Breakout extends GraphicsProgram {
 		}
 	}
 	
-	private GRect brick;
+	/* filling in the rows - part 2 */ 
+	private void fillRow(double x_right, double x_left, double y, Color color){ 
+		brick = new GRect(x_right, y, BRICK_WIDTH, BRICK_HEIGHT);
+		brick.setFilled(true); 
+		brick.setColor(color);
+		add(brick);
+		brick = new GRect(x_left, y, BRICK_WIDTH, BRICK_HEIGHT);
+		brick.setFilled(true); 
+		brick.setColor(color); 
+		add(brick); 
+	}
+		
 	
+	/* checking if the ball has hit a brick */ 
 	private void checkBrickCollision() { 
 		checkRight(); 
 		checkLeft(); 
@@ -253,6 +270,8 @@ public class Breakout extends GraphicsProgram {
 		checkBottom(); 
 	}
 	
+	
+	/* check if hit the right part of the brick */ 
 	private void checkRight() {
 		GObject right = getElementAt(ball.getX() - 1, ball.getY() + BALL_RADIUS); 
 		if (right != null) { 
@@ -263,6 +282,7 @@ public class Breakout extends GraphicsProgram {
 		}
 	} 
 	
+	/* check if hit the left part of the brick */ 
 	private void checkLeft() { 
 		GObject left = getElementAt(ball.getX() + 2*BALL_RADIUS + 1, ball.getY() + BALL_RADIUS); 
 		if (left != null) { 
@@ -273,6 +293,7 @@ public class Breakout extends GraphicsProgram {
 		}
 	}
 	
+	/* check if hit the top of the brick */ 
 	private void checkTop() { 
 		GObject top = getElementAt(ball.getX() + BALL_RADIUS, ball.getY() + 2*BALL_RADIUS); 
 		if (top != null) { 
@@ -283,6 +304,7 @@ public class Breakout extends GraphicsProgram {
 		}
 	}
 	
+	/* check if hit the bottom of the brick */ 
 	private void checkBottom() {
 		GObject bottom = getElementAt(ball.getX() + BALL_RADIUS, ball.getY()); 
 		if (bottom != null) { 
@@ -295,15 +317,6 @@ public class Breakout extends GraphicsProgram {
 	
 	
 	
-	private void fillRow(double x_right, double x_left, double y, Color color){ 
-		brick = new GRect(x_right, y, BRICK_WIDTH, BRICK_HEIGHT);
-		brick.setFilled(true); 
-		brick.setColor(color);
-		add(brick);
-		brick = new GRect(x_left, y, BRICK_WIDTH, BRICK_HEIGHT);
-		brick.setFilled(true); 
-		brick.setColor(color); 
-		add(brick); 
-	}
+	
 
 }
