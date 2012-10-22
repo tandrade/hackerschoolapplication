@@ -91,11 +91,15 @@ public class Breakout extends GraphicsProgram {
 	private void stopProgram() {
 		remove(ball); 
 		pause(200); 
+		endScreen(); 
+		makeLabel(); 
+	}
+	
+	private void endScreen() { 
 		GRect end = new GRect(0, 0, WIDTH, HEIGHT);
 		end.setFilled(true); 
 		end.setColor(Color.black);
 		add(end); 
-		makeLabel(); 
 	}
 	
 	private void makeLabel() { 
