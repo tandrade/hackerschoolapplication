@@ -76,7 +76,7 @@ public class Breakout extends GraphicsProgram {
 		buildBar((getWidth() - PADDLE_WIDTH)/2, BOX_HEIGHT);
 		buildBall(BALL_X_START, BALL_Y_START);
 		waitForClick();
-		while (true) { 
+		while (i < 4) {   
 			checkForPaddle(); 
 			checkBrickCollision(); 
 			checkForXCollision();
@@ -97,6 +97,8 @@ public class Breakout extends GraphicsProgram {
 		add(ball); 
 	}
 
+	
+	private int i = 1; 
 	
 	private double dx = VEL;
 	private double dy = VEL; 
@@ -123,6 +125,7 @@ public class Breakout extends GraphicsProgram {
 	private void endGame() { 
 		dy = 0; 
 		dx = 0; 
+		i = i++; 
 	}
 	
 	private void moveBall() { 
