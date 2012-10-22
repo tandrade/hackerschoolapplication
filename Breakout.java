@@ -95,6 +95,10 @@ public class Breakout extends GraphicsProgram {
 		add(end); 
 	}
 	
+	private void makeLabel() { 
+		GLabel gameover = new GLabel(getWidth()/2, getHeight()/2);
+	}
+	
 	/*
 	 * Making the ball  
 	 */
