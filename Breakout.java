@@ -141,8 +141,10 @@ public class Breakout extends GraphicsProgram {
 	}
 	
 	private void moveBall() { 
-		ball.move(dx, dy); 
-		pause(60);
+		while (i < 4) { 
+			ball.move(dx, dy); 
+			pause(60);
+		} 
 	}
 	
 	private void checkForPaddle() { 
