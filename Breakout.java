@@ -93,6 +93,7 @@ public class Breakout extends GraphicsProgram {
 		end.setFilled(true); 
 		end.setColor(Color.black);
 		add(end); 
+		makeLabel(); 
 	}
 	
 	private void makeLabel() { 
