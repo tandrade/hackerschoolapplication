@@ -126,7 +126,7 @@ public class Breakout extends GraphicsProgram {
 		remove(ball); 
 		i = i++;
 		buildBall(BALL_X_START, BALL_Y_START);
-		clickForStart(); 
+		waitForClick(); 
 	}
 	
 	private void moveBall() { 
