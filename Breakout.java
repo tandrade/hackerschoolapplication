@@ -169,7 +169,7 @@ public class Breakout extends GraphicsProgram {
 	/* checking whether the ball hits the paddle */ 
 	
 	private void checkForPaddle() { 
-		if (ball.getY() > BOX_HEIGHT - 1.5*BALL_RADIUS) { 
+		if (ball.getY() > BOX_HEIGHT - 2*BALL_RADIUS) { 
 			if (ball.getX() > box.getX() - 1 && ball.getX() < (box.getX() + 1 + PADDLE_WIDTH)) { 
 				dy = -dy;
 				pause(60);
@@ -179,11 +179,11 @@ public class Breakout extends GraphicsProgram {
 	
 	/* moving the ball */ 
 	private void moveBall() { 
-		if (i < 4) { 
+		if (i < 4) { // keeping track of lives 
 			ball.move(dx, dy); 
 			pause(60);
-		} else {
-			stopProgram();
+		} else { 
+			stopProgram(); //executes the script to end the program  
 			}  
 	}
 	
