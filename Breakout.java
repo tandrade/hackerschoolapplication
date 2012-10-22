@@ -109,7 +109,7 @@ public class Breakout extends GraphicsProgram {
 	}
 
 	
-	private int i = 1; 
+	private int i = 0; 
 	
 	private double dx = VEL;
 	private double dy = VEL; 
