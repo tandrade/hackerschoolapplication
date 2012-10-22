@@ -90,7 +90,7 @@ public class Breakout extends GraphicsProgram {
 	
 	private void stopProgram() {
 		remove(ball); 
-		pause(500); 
+		pause(200); 
 		GRect end = new GRect(0, 0, WIDTH, HEIGHT);
 		end.setFilled(true); 
 		end.setColor(Color.black);
