@@ -172,7 +172,8 @@ public class Breakout extends GraphicsProgram {
 		if (ball.getY() > BOX_HEIGHT - 2*BALL_RADIUS) { 
 			if (ball.getX() > box.getX() - 1 && ball.getX() < (box.getX() + 1 + PADDLE_WIDTH)) { 
 				dy = -dy;
-				pause(60); 
+				pause(60);
+			} 
 		}
 	}
 	
