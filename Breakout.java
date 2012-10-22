@@ -86,6 +86,9 @@ public class Breakout extends GraphicsProgram {
 		} 
 	} 
 	
+	/*
+	 * Ending the game 
+	 */
 	
 	private void stopProgram() {
 		remove(ball); 
@@ -94,6 +97,7 @@ public class Breakout extends GraphicsProgram {
 		makeLabel(); 
 	}
 	
+	/* Make the screen go black*/  
 	private void endScreen() { 
 		GRect end = new GRect(0, 0, WIDTH, HEIGHT);
 		end.setFilled(true); 
@@ -101,6 +105,7 @@ public class Breakout extends GraphicsProgram {
 		add(end); 
 	}
 	
+	/* Print "GAME OVER" to the screen */ 
 	private void makeLabel() { 
 		GLabel gameover = new GLabel("GAME OVER"); 
 		gameover.setLocation((getWidth() - gameover.getWidth())/2, HEIGHT/2);
@@ -109,24 +114,29 @@ public class Breakout extends GraphicsProgram {
 		add(gameover); 
 	}
 	
+	
 	/*
-	 * Making the ball  
+	 * Making and controlling the ball  
 	 */
 	
+	/* The ball itself */ 
 	private GOval ball; 
+
+	/* used to keep track of the ball in play */ 
+	private int i; 
 	
+	/* x and y movement of the ball */ 
+	private double dx = VEL;
+	private double dy = VEL; 
+	
+	/* start off by building the ball */ 
 	private void buildBall(double x, double y) { 
 		ball = new GOval (x, y, BALL_RADIUS, BALL_RADIUS);
 		ball.setFilled(true); 
 		add(ball); 
 	}
 
-	
-	private int i; 
-	
-	private double dx = VEL;
-	private double dy = VEL; 
-	
+	/* check if going to the right or left of screen*/ 
 	private void checkForXCollision() { 
 		if (ball.getX() < X_BARRIER_LEFT) { 
 			dx = VEL; 
@@ -136,6 +146,7 @@ public class Breakout extends GraphicsProgram {
 		}
 	}
 	
+	/* check if going too high or too low */ 
 	private void checkForYCollision() { 
 		if (ball.getY() < Y_BARRIER_UP) { 
 			dy = VEL; 
@@ -143,17 +154,29 @@ public class Breakout extends GraphicsProgram {
 		if (ball.getY() > Y_BARRIER_DOWN) {
 			i ++ ; 
 			if (i < 4) { 
-				endGame(); 
+				endGame(); //end one move of the game  
 			}
 		}
 	}
 	
+	/* resetting the game after ball falls to the bottom */ 
 	private void endGame() { 
 		remove(ball); 
 		buildBall(BALL_X_START, BALL_Y_START);
 		waitForClick(); 
 	}
 	
+	/* checking whether the ball hits the paddle */ 
+	
+	private void checkForPaddle() { 
+		if (ball.getY() > BOX_HEIGHT - 2*BALL_RADIUS) { 
+			if (ball.getX() > box.getX() - 1 && ball.getX() < (box.getX() + 1 + PADDLE_WIDTH)) { 
+				dy = -dy;
+				pause(60); 
+		}
+	}
+	
+	/* moving the ball */ 
 	private void moveBall() { 
 		if (i < 4) { 
 			ball.move(dx, dy); 
