@@ -134,7 +134,9 @@ public class Breakout extends GraphicsProgram {
 		}
 		if (ball.getY() > Y_BARRIER_DOWN) {
 			i ++ ; 
-			endGame();
+			if (i < 4) { 
+				endGame(); 
+			}
 		}
 	}
 	
