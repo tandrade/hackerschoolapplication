@@ -144,7 +144,7 @@ public class Breakout extends GraphicsProgram {
 		if (i < 4) { 
 			ball.move(dx, dy); 
 			pause(60);
-		} else {stoProgram();}  
+		} else {stopProgram();}  
 	}
 	
 	private void checkForPaddle() { 
