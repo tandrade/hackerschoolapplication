@@ -264,9 +264,9 @@ public class Breakout extends GraphicsProgram {
 	
 	/* checking if the ball has hit a brick */ 
 	private void checkBrickCollision() { 
-		checkRight(); 
-		checkLeft(); 
-		checkTop(); 
+		//checkRight(); 
+		//checkLeft(); 
+		//checkTop(); 
 		checkBottom(); 
 	}
 	
