@@ -84,6 +84,7 @@ public class Breakout extends GraphicsProgram {
 		getStart(); 
 		waitForClick(); 
 		while (i < NTURNS + 1) {
+			bricksLeft(); 
 			checkObjCollision(); 
 			checkForXCollision();
 			checkForYCollision();
