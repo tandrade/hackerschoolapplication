@@ -168,12 +168,12 @@ public class Breakout extends GraphicsProgram {
 		
 	
 	private void getStart() { 
-		/*RandomGenerator rgen = RandomGenerator.getInstance(); 
+		RandomGenerator rgen = RandomGenerator.getInstance(); 
 		Y_VEL = rgen.nextDouble(1.0, 3.0);
 		X_VEL = rgen.nextDouble(1.0, 3.0); 
-		if (rgen.nextBoolean(0.5)) X_VEL = -X_VEL;*/
-		Y_VEL = 1;
-		X_VEL = 1; 
+		if (rgen.nextBoolean(0.5)) X_VEL = -X_VEL;
+		//Y_VEL = 1;
+		//X_VEL = 1; 
 	}
 	
 	/* check if going to the right or left of screen*/ 
