@@ -189,11 +189,6 @@ public class Breakout extends GraphicsProgram {
 			}  
 	}
 	
-	private void checkBounce() { 
-		if (bounce = 0) dy = dy; 
-		else dy = -dy; 
-	}
-	
 	/* 
 	 * Making the paddle 
 	 */
@@ -332,15 +327,13 @@ public class Breakout extends GraphicsProgram {
 	private void checkObjCollision() { 
 		collision = getCollidingObject();
 		if (collision != null) { 
-			if (collision == box) bounce = 1; 
+			if (collision == box) dy = -VEL; 
 			else{ 
 				remove(collision);
-				bounce = 1;  
 			}
-		} else bounce = 0; 
+		} 
 	}
 	
-	int bounce = 0; 
 	
 	/*private void checkBottom() {
 		GObject bottom = getElementAt(ball.getX(), ball.getY()); 
