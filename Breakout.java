@@ -272,7 +272,7 @@ public class Breakout extends GraphicsProgram {
 	
 	
 	/* check if hit the right part of the brick */ 
-	private void checkRight() {
+	/*private void checkRight() {
 		GObject right = getElementAt(ball.getX(), ball.getY() + BALL_RADIUS); 
 		if (right != null) { 
 			if (right != ball && right != box) { 
@@ -302,7 +302,7 @@ public class Breakout extends GraphicsProgram {
 				remove(top); 
 			}
 		}
-	}
+	}*/
 	
 	/* check if hit the bottom of the brick */ 
 	private void checkBottom() {
