@@ -262,7 +262,7 @@ public class Breakout extends GraphicsProgram {
 		remove(scorecard); 
 		scorecard.setColor(Color.WHITE);
 		scorecard.setFont(new Font("Courier", Font.BOLD, 12));
-		scorecard.setLocation((getWidth()/4 - scorecard.getWidth())/2, scorecard.getAscent());
+		scorecard.setLocation((getWidth()/4 - scorecard.getWidth())/2, 20);
 	}
 	
 	/* moving the ball */ 
