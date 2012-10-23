@@ -102,6 +102,7 @@ public class Breakout extends GraphicsProgram {
 	private void buildBar(double x, double y) { 
 		box = new GRect(x, y, PADDLE_WIDTH, PADDLE_HEIGHT); //box starts 
 		box.setFilled(true); 
+		box.setColor(Color.WHITE); 
 		add(box); 
 	}
 	
@@ -111,7 +112,8 @@ public class Breakout extends GraphicsProgram {
 			x = APPLICATION_WIDTH - PADDLE_WIDTH; 
 		}
 		remove(box); //erase where box was before 
-		box.setLocation(x, BOX_HEIGHT); //update box coordinates 
+		box.setLocation(x, BOX_HEIGHT); //update box coordinates
+		box.setColor(Color.WHITE); 
 		add(box); //add box 
 	}
 	
