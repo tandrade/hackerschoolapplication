@@ -247,7 +247,12 @@ public class Breakout extends GraphicsProgram {
 	}
 	
 	private void safeMove() {
-		GObject check = getCollidingObject(); 
+		GObject check = getCollidingObject();
+		if (check != null) { 
+			remove(check); 
+			Y_VEL = -Y_VEL; 
+			getScore(); 
+		}
 		if (check == null) { 
 			Y_VEL = -Y_VEL;
 			getScore(); 
