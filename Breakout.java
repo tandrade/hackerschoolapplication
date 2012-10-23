@@ -329,8 +329,7 @@ public class Breakout extends GraphicsProgram {
 			if (collision == box) dy=-VEL; 
 			else {
 				remove(collision); 
-				pause(1); 
-				dy=-dy; 
+				dy=0; 
 			}
 		}
 	}
