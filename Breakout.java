@@ -269,12 +269,11 @@ public class Breakout extends GraphicsProgram {
 	}
 	
 	private int scoreChoice() { 
-		GObject hit =  
-		if (hit.getColor() == Color.CYAN) return BASE_SCORE;
-		if (hit.getColor() == Color.GREEN) return 3*(BASE_SCORE/2);   
-		if (hit.getColor() == Color.YELLOW) return 2*BASE_SCORE; 	
-		if (hit.getColor() == Color.ORANGE) return 5*(BASE_SCORE/2); 
-		if (hit.getColor() == Color.RED) return 3*BASE_SCORE;
+		if (collision.getColor() == Color.CYAN) return BASE_SCORE;
+		if (collision.getColor() == Color.GREEN) return 3*(BASE_SCORE/2);   
+		if (collision.getColor() == Color.YELLOW) return 2*BASE_SCORE; 	
+		if (collision.getColor() == Color.ORANGE) return 5*(BASE_SCORE/2); 
+		if (collision.getColor() == Color.RED) return 3*BASE_SCORE;
 		else return 0; 
 	}
 	
