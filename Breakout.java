@@ -262,12 +262,12 @@ public class Breakout extends GraphicsProgram {
 		
 	
 	/* checking if the ball has hit a brick */ 
-	private void checkBrickCollision() { 
+	/*private void checkBrickCollision() { 
 		//checkRight(); 
 		//checkLeft(); 
 		//checkTop(); 
 		checkBottom(); 
-	}
+	}*/ 
 	
 	
 	/* check if hit the right part of the brick */ 
@@ -304,12 +304,15 @@ public class Breakout extends GraphicsProgram {
 	}*/
 	
 	/* check if hit the bottom of the brick */ 
-	/*private void getCollidingObject() { 
+	private GObject getCollidingObject() { 
 		GObject objtop1 = getElementAt(ball.getX(), ball.getY());
+		if (objtop1 != null) return objtop1; 
+		}
 		GObject objtop2 = getElementAt(ball.getX() + 2*BALL_RADIUS, ball.getY());
+		
 		GObject objbottom1 = getElementAt(ball.getX(), ball.getY() + 2*BALL_RADIUS); 
 		GObject objbottom2 = getElementAt(ball.getX() + 2*BALL_RADIUS, ball.getY() + 2*BALL_RADIUS);  
-	}*/ 
+	}
 	
 	/*private void checkBottom() {
 		GObject bottom = getElementAt(ball.getX(), ball.getY()); 
