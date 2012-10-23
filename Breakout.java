@@ -269,7 +269,7 @@ public class Breakout extends GraphicsProgram {
 	}
 	
 	private int scoreChoice() { 
-		GObject hit = getCollidingObject(); 
+		GObject hit =  
 		if (hit.getColor() == Color.CYAN) return BASE_SCORE;
 		if (hit.getColor() == Color.GREEN) return 3*(BASE_SCORE/2);   
 		if (hit.getColor() == Color.YELLOW) return 2*BASE_SCORE; 	
@@ -330,6 +330,7 @@ public class Breakout extends GraphicsProgram {
 	private GRect box; 
 	private GOval ball;
 	private GLabel scorecard;
+	private GObject collision; 
 
 	/* used to keep track of the ball in play */ 
 	private int i; 
