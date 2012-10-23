@@ -189,7 +189,7 @@ public class Breakout extends GraphicsProgram {
 	/* check if going too high or too low */ 
 	private void checkForYCollision() { 
 		if (ball.getY() < Y_BARRIER_UP) { 
-			dy = Y_VEL; 
+			Y_VEL = -Y_VEL; 
 		}
 		if (ball.getY() > Y_BARRIER_DOWN) {
 			i ++ ; 
@@ -230,7 +230,7 @@ public class Breakout extends GraphicsProgram {
 	private void checkObjCollision() { 
 		GObject collision = getCollidingObject();
 		if (collision != null) { 
-			if (collision == box) dy = -Y_VEL; 
+			if (collision == box) Y_VEL = -Y_VEL; 
 			else{ 
 				remove(collision);
 				safeMove(); 
@@ -241,7 +241,7 @@ public class Breakout extends GraphicsProgram {
 	private void safeMove() {
 		GObject check = getCollidingObject(); 
 		if (check == null) { 
-			dy = Y_VEL;
+			Y_VEL = -Y_VEL;
 		}
 	}
 	
@@ -293,12 +293,12 @@ public class Breakout extends GraphicsProgram {
 	private int i; 
 	
 
-	private RandomGenerator rgen = RandomGenerator.getInstance();
+	//private RandomGenerator rgen = RandomGenerator.getInstance();
 	private double X_VEL; 
 	private double Y_VEL; 
 	/* x and y movement of the ball */ 
-	private double dx = X_VEL;
-	private double dy = Y_VEL;
+	//private double dx = X_VEL;
+	//private double dy = Y_VEL;
 	
 	
 	
