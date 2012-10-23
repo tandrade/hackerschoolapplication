@@ -66,7 +66,6 @@ public class Breakout extends GraphicsProgram {
 	private static final int X_BARRIER_RIGHT = WIDTH - 2*BALL_RADIUS; 
 	private static final int Y_BARRIER_UP = 2*BALL_RADIUS; 
 	private static final int Y_BARRIER_DOWN = HEIGHT - 4*BALL_RADIUS; 
-	private static final int VEL = 1;
 	private static final int N_COLOR_ROWS = NBRICK_ROWS/5;
 	private static final int TIME = 5; 
 	private static double brickDif = BRICK_HEIGHT + BRICK_SEP; 
@@ -78,6 +77,7 @@ public class Breakout extends GraphicsProgram {
 		addMouseListeners();
 		setup(); 
 		waitForClick();
+		getStart(); 
 		while (i < 4) {    
 			checkObjCollision(); 
 			checkForXCollision();
@@ -166,6 +166,14 @@ public class Breakout extends GraphicsProgram {
 	 * Controlling the ball  
 	 */
 		
+	
+	private void getStart() { 
+		private RandomGenerator rgen = RandomGenerator.getInstance(); 
+		Y_VEL = rgen.nextDouble(1.0, 3.0);
+		X_VEL = rgen.nextDouble(1.0, 3.0); 
+		if (rgen.nextBoolean(0.5)) X_VEL = -X_VEL; 
+	}
+	
 	/* check if going to the right or left of screen*/ 
 	private void checkForXCollision() { 
 		if (ball.getX() < X_BARRIER_LEFT) { 
@@ -282,7 +290,13 @@ public class Breakout extends GraphicsProgram {
 	/* used to keep track of the ball in play */ 
 	private int i; 
 	
+
+	private double X_VEL; 
+	private double Y_VEL; 
 	/* x and y movement of the ball */ 
-	private double dx = VEL;
-	private double dy = VEL;  
+	private double dx = X_VEL;
+	private double dy = Y_VEL;
+	
+	
+	
 }
