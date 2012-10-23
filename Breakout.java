@@ -262,7 +262,8 @@ public class Breakout extends GraphicsProgram {
 	}
 	
 	private void getScore() { 
-		score= score + scoreChoice(); 
+		int add = scoreChoice();
+		score = score + add; 
 		remove(scorecard); 
 		showScore(); 
 	}
