@@ -274,7 +274,7 @@ public class Breakout extends GraphicsProgram {
 		if (hit.getColor() == Color.YELLOW) return 2*BASE_SCORE; 	
 		if (hit.getColor() == Color.ORANGE) return 5*(BASE_SCORE/2); 
 		if (hit.getColor() == Color.RED) return 3*BASE_SCORE;
-		else return BASE_SCORE; 
+		else return 0; 
 	}
 	
 	private void showScore() {  
