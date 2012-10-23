@@ -85,6 +85,7 @@ public class Breakout extends GraphicsProgram {
 			checkForXCollision();
 			checkForYCollision();
 			moveBall(); 
+			printScore(); 
 		} 
 	} 
 	
