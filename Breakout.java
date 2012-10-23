@@ -297,9 +297,9 @@ public class Breakout extends GraphicsProgram {
 	private void checkTop() { 
 		GObject top = getElementAt(ball.getX() + BALL_RADIUS, ball.getY()); 
 		if (top != null) { 
-			if (top != ball && top != box) {
-				remove(top); 
+			if (top != ball && top != box) { 
 				dy = -dy; 
+				remove(top); 
 			}
 		}
 	}
