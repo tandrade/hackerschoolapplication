@@ -79,13 +79,14 @@ public class Breakout extends GraphicsProgram {
 		addMouseListeners();
 		setup();
 		getStart();
+		showScore(); 
 		waitForClick(); 
 		while (i < 4) {
 			checkObjCollision(); 
 			checkForXCollision();
 			checkForYCollision();
 			moveBall(); 
-			showScore(); 
+			updateScore(); 
 		} 
 	} 
 	
