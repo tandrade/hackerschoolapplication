@@ -86,7 +86,6 @@ public class Breakout extends GraphicsProgram {
 			checkForXCollision();
 			checkForYCollision();
 			moveBall(); 
-			updateScore(); 
 		} 
 	} 
 	
@@ -266,15 +265,6 @@ public class Breakout extends GraphicsProgram {
 	}
 	
 	private void showScore() {  
-		scorecard = new GLabel("Score: " + score);
-		scorecard.setColor(Color.WHITE);
-		scorecard.setFont(new Font("Courier", Font.BOLD, 12));
-		scorecard.setLocation((getWidth()/4 - scorecard.getWidth())/2, 20);
-		add(scorecard); 
-	}
-	
-	private void updateScore() { 
-		remove(scorecard); 
 		scorecard = new GLabel("Score: " + score);
 		scorecard.setColor(Color.WHITE);
 		scorecard.setFont(new Font("Courier", Font.BOLD, 12));
