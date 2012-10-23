@@ -306,7 +306,7 @@ public class Breakout extends GraphicsProgram {
 	
 	/* check if hit the bottom of the brick */ 
 	private void checkBottom() {
-		GObject bottom = getElementAt(ball.getX(), ball.getY() + 1); 
+		GObject bottom = getElementAt(ball.getX(), ball.getY() + BALL_RADIUS); 
 		if (bottom != null) { 
 			if (bottom != ball){ 
 					remove(bottom); 
