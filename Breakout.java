@@ -248,7 +248,7 @@ public class Breakout extends GraphicsProgram {
 	/* moving the ball */ 
 	private void moveBall() { 
 		if (i < 4) { // keeping track of lives 
-			ball.move(dx, dy); 
+			ball.move(X_VEL, Y_VEL); 
 			pause(TIME);
 		} else { 
 			stopProgram(); //executes the script to end the program  
