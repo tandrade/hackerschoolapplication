@@ -70,7 +70,8 @@ public class Breakout extends GraphicsProgram {
 	private static final int TIME = 10; 
 	private static double brickDif = BRICK_HEIGHT + BRICK_SEP; 
 	private static int SCORE_OFFSET = BRICK_Y_OFFSET / 3;
-	private static int SCORE_SIZE = SCORE_OFFSET / 2; 
+	private static int SCORE_SIZE = SCORE_OFFSET / 2;
+	private static int BASE_SCORE = 10; 
 	
 /* Method: run() */
 /** Runs the Breakout program. */
@@ -264,6 +265,14 @@ public class Breakout extends GraphicsProgram {
 		score = score + 10;
 		remove(scorecard); 
 		showScore(); 
+	}
+	
+	private int scoreChoice() { 
+		GObject hit = getCollidingObject(); 
+		if (hit.getColor() == Color.CYAN) { 
+			return score = score + 15;
+		} else return score; 
+		
 	}
 	
 	private void showScore() {  
