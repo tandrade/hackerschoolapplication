@@ -80,7 +80,7 @@ public class Breakout extends GraphicsProgram {
 		addMouseListeners();
 		setup(); 
 		waitForClick();
-		getStart(); 
+		//getStart(); 
 		while (i < 4) {    
 			checkObjCollision(); 
 			checkForXCollision();
