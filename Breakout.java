@@ -112,7 +112,7 @@ public class Breakout extends GraphicsProgram {
 	}
 	
 	public void mouseMoved(MouseEvent e) {
-		if (i < 4) { 
+		if (i < NTURNS + 1) { 
 			double x = e.getX(); 
 			if (x > APPLICATION_WIDTH - PADDLE_WIDTH) { //box doesn't go offscreen  
 				x = APPLICATION_WIDTH - PADDLE_WIDTH;
