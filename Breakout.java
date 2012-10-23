@@ -259,7 +259,7 @@ public class Breakout extends GraphicsProgram {
 	}
 	
 	private void showScore() {  
-		GLabel scorecard = new GLabel("Score: " + score);
+		scorecard = new GLabel("Score: " + score);
 		scorecard.setColor(Color.WHITE);
 		scorecard.setFont(new Font("Courier", Font.BOLD, 12));
 		scorecard.setLocation((getWidth()/4 - scorecard.getWidth())/2, 20);
@@ -267,6 +267,10 @@ public class Breakout extends GraphicsProgram {
 	
 	private void updateScore() { 
 		remove(scorecard); 
+		scorecard = new GLabel("Score: " + score);
+		scorecard.setColor(Color.WHITE);
+		scorecard.setFont(new Font("Courier", Font.BOLD, 12));
+		scorecard.setLocation((getWidth()/4 - scorecard.getWidth())/2, 20);
 	}
 	
 	/* moving the ball */ 
