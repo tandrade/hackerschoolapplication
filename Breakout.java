@@ -70,7 +70,7 @@ public class Breakout extends GraphicsProgram {
 	private static final int TIME = 10; 
 	private static double brickDif = BRICK_HEIGHT + BRICK_SEP; 
 	private static double SCORE_OFFSET = BRICK_Y_OFFSET / 5;
-	private static int SCORE_SIZE = SCORE_OFFSET/2 
+	private static int SCORE_SIZE = SCORE_OFFSET/2; 
 	
 /* Method: run() */
 /** Runs the Breakout program. */
@@ -269,7 +269,7 @@ public class Breakout extends GraphicsProgram {
 	private void showScore() {  
 		scorecard = new GLabel("Score: " + score);
 		scorecard.setColor(Color.WHITE);
-		scorecard.setFont(new Font("Courier", Font.BOLD));
+		scorecard.setFont(new Font("Courier", Font.BOLD, SCORE_SIZE));
 		scorecard.setLocation((getWidth()/4 - scorecard.getWidth())/2, SCORE_OFFSET);
 		add(scorecard); 
 	}
