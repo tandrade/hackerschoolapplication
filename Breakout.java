@@ -268,8 +268,8 @@ public class Breakout extends GraphicsProgram {
 	private void showScore() {  
 		scorecard = new GLabel("Score: " + score);
 		scorecard.setColor(Color.WHITE);
-		scorecard.setFont(new Font("Courier", Font.BOLD, 20));
-		scorecard.setLocation((getWidth()/4 - scorecard.getWidth())/2, 25);
+		scorecard.setFont(new Font("Courier", Font.BOLD, SCORE_OFFSET));
+		scorecard.setLocation((getWidth()/4 - scorecard.getWidth())/2, SCORE_OFFSET);
 		add(scorecard); 
 	}
 	
