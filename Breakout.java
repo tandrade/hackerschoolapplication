@@ -295,7 +295,7 @@ public class Breakout extends GraphicsProgram {
 	
 	/* check if hit the top of the brick */ 
 	private void checkTop() { 
-		GObject top = getElementAt(ball.getX() + BALL_RADIUS, ball.getY() + 2*BALL_RADIUS); 
+		GObject top = getElementAt(ball.getX() + BALL_RADIUS, ball.getY()); 
 		if (top != null) { 
 			if (top != ball && top != box) {
 				remove(top); 
