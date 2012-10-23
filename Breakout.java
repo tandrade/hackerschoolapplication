@@ -321,7 +321,7 @@ public class Breakout extends GraphicsProgram {
 	
 	private void bricksLeft() { 
 		for (int k=0; k > WIDTH; k = k + BRICK_WIDTH + BRICK_SEP) { 
-			for (int m= BRICK_Y_OFFSET; m > (NBRICK_ROWS*5 + 1); m = m + BRICK_HEIGHT) { 
+			for (int m= BRICK_Y_OFFSET + 1; m > (NBRICK_ROWS*5 + 1); m = m + BRICK_HEIGHT) { 
 				GObject test = getElementAt(k, m);
 				if (test == null) gameWon(); 
 			}
