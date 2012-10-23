@@ -259,7 +259,7 @@ public class Breakout extends GraphicsProgram {
 	
 	private void showScore() { 
 		String scoring = ("Score: " + score); 
-		GLabel scorecard = new (scoring);
+		GLabel scorecard = new GLabel("GAME OVER"); 
 		scorecard.setFilled(true); 
 		scorecard.setColor(Color.WHITE); 
 		
