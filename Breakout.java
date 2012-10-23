@@ -330,7 +330,7 @@ public class Breakout extends GraphicsProgram {
 	
 
 	//private RandomGenerator rgen = RandomGenerator.getInstance();
-	private double score; 
+	private int score; 
 	private double X_VEL; 
 	private double Y_VEL; 
 	/* x and y movement of the ball */ 
