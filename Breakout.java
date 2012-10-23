@@ -179,10 +179,10 @@ public class Breakout extends GraphicsProgram {
 	/* check if going to the right or left of screen*/ 
 	private void checkForXCollision() { 
 		if (ball.getX() < X_BARRIER_LEFT) { 
-			dx = X_VEL; 
+			X_VEL = -X_VEL; 
 		}
 		if (ball.getX() > X_BARRIER_RIGHT) { 
-			dx = -X_VEL; 
+			X_VEL = -X_VEL; 
 		}
 	}
 	
