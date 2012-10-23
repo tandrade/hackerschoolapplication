@@ -315,8 +315,4 @@ public class Breakout extends GraphicsProgram {
 		}
 	}
 	
-	
-	
-	
-
 }
