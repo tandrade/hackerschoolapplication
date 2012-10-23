@@ -317,7 +317,7 @@ public class Breakout extends GraphicsProgram {
 				if (objbottom1 != null) return objbottom1;
 				else { 
 					if (objbottom2 != null) return objbottom2;
-					else return objbottom2; 
+					else return null; 
 				}
 			}
 		} 
