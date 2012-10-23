@@ -337,7 +337,7 @@ public class Breakout extends GraphicsProgram {
 	private void bounce() { 
 		dy = 0;
 		remove(collision); 
-		dy = -dy; 
+		dy = -VEL; 
 	}
 	
 	/*private void checkBottom() {
