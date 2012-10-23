@@ -311,7 +311,7 @@ public class Breakout extends GraphicsProgram {
 			if (bottom != ball){ 
 				if (bottom != box) {
 					remove(bottom); 
-					dy = -dy; 
+					dy = -VEL; 
 				} 
 			}
 		}
