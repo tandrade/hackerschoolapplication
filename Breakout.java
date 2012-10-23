@@ -257,6 +257,13 @@ public class Breakout extends GraphicsProgram {
 		score = score + 10; 
 	}
 	
+	private void showScore() { 
+		GLabel scorecard = ("Score: " + score);
+		scorecard.setFilled(true); 
+		scorecard.setColor(Color.WHITE); 
+		
+	}
+	
 	/* moving the ball */ 
 	private void moveBall() { 
 		if (i < 4) { // keeping track of lives 
