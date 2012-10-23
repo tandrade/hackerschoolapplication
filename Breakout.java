@@ -262,17 +262,19 @@ public class Breakout extends GraphicsProgram {
 	}
 	
 	private void getScore() { 
-		score = score + 10;
+		score= score + scoreChoice(); 
 		remove(scorecard); 
 		showScore(); 
 	}
 	
 	private int scoreChoice() { 
 		GObject hit = getCollidingObject(); 
-		if (hit.getColor() == Color.CYAN) { 
-			return score = score + 15;
-		} else return score; 
-		
+		if (hit.getColor() == Color.CYAN) return BASE_SCORE;
+		if (hit.getColor() == Color.GREEN) return 3*(BASE_SCORE/2);   
+		if (hit.getColor() == Color.YELLOW) return 2*BASE_SCORE; 	
+		if (hit.getColor() == Color.ORANGE) return 5*(BASE_SCORE/2); 
+		if (hit.getColor() == Color.RED) return 3*BASE_SCORE;
+		else return BASE_SCORE; 
 	}
 	
 	private void showScore() {  
