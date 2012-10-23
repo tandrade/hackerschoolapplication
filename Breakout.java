@@ -239,7 +239,7 @@ public class Breakout extends GraphicsProgram {
 	private void safeMove() {
 		GObject check = getCollidingObject(); 
 		if (check == null) { 
-			dy = VEL;
+			dy = Y_VEL;
 		}
 	}
 	
