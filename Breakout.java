@@ -207,6 +207,7 @@ public class Breakout extends GraphicsProgram {
 	private void endTurn() { 
 		remove(ball); 
 		buildBall(BALL_X_START, BALL_Y_START);
+		getStart(); 
 		waitForClick(); 
 	}
 	
