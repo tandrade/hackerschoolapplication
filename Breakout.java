@@ -331,7 +331,7 @@ public class Breakout extends GraphicsProgram {
 			if (collision == box) bounce(); 
 			else{ 
 				remove(collision);
-				bounce(); 
+				ball.move(dx, -dy);  
 				remove(collision); 
 				
 			}
