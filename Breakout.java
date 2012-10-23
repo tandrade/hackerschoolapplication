@@ -336,6 +336,10 @@ public class Breakout extends GraphicsProgram {
 		}
 	}
 	
+	private void bounce() {
+		dy = -dy; 
+	}
+	
 	/*private void checkBottom() {
 		GObject bottom = getElementAt(ball.getX(), ball.getY()); 
 		if (bottom != null &&   
