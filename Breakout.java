@@ -67,7 +67,8 @@ public class Breakout extends GraphicsProgram {
 	private static final int Y_BARRIER_UP = 2*BALL_RADIUS; 
 	private static final int Y_BARRIER_DOWN = HEIGHT - 4*BALL_RADIUS; 
 	private static final int VEL = 1;
-	private static final int N_COLOR_ROWS = NBRICK_ROWS/5; 
+	private static final int N_COLOR_ROWS = NBRICK_ROWS/5;
+	private static final int TIME = 5; 
 	
 /* Method: run() */
 /** Runs the Breakout program. */
@@ -173,7 +174,7 @@ public class Breakout extends GraphicsProgram {
 		if (ball.getY() > BOX_HEIGHT - 2*BALL_RADIUS) { 
 			if (ball.getX() > box.getX() - 1 && ball.getX() < (box.getX() + 1 + PADDLE_WIDTH)) { 
 				dy = -dy;
-				pause(60);
+				pause(TIME);
 			} 
 		}
 	}
@@ -182,7 +183,7 @@ public class Breakout extends GraphicsProgram {
 	private void moveBall() { 
 		if (i < 4) { // keeping track of lives 
 			ball.move(dx, dy); 
-			pause(60);
+			pause(TIME);
 		} else { 
 			stopProgram(); //executes the script to end the program  
 			}  
