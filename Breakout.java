@@ -75,9 +75,7 @@ public class Breakout extends GraphicsProgram {
 	public void run() {
 		i = 1; 
 		addMouseListeners();
-		buildRows(getWidth()/2 + BRICK_SEP/2, BRICK_Y_OFFSET);
-		buildBar((getWidth() - PADDLE_WIDTH)/2, BOX_HEIGHT);
-		buildBall(BALL_X_START, BALL_Y_START);
+		setup(); 
 		waitForClick();
 		while (i < 4) {    
 			checkObjCollision(); 
@@ -87,112 +85,17 @@ public class Breakout extends GraphicsProgram {
 		} 
 	} 
 	
-	/*
-	 * Ending the game 
-	 */
-	
-	private void stopProgram() {
-		remove(ball); 
-		pause(200); 
-		endScreen(); 
-		makeLabel(); 
-	}
-	
-	/* Make the screen go black*/  
-	private void endScreen() { 
-		GRect end = new GRect(0, 0, WIDTH, HEIGHT);
-		end.setFilled(true); 
-		end.setColor(Color.black);
-		add(end); 
-	}
-	
-	/* Print "GAME OVER" to the screen */ 
-	private void makeLabel() { 
-		GLabel gameover = new GLabel("GAME OVER"); 
-		gameover.setFont(new Font("Courier", Font.BOLD, 30));
-		gameover.setLocation((getWidth() - gameover.getWidth())/2, HEIGHT/2);
-		gameover.setColor(Color.WHITE);
-		add(gameover); 
-	}
-	
 	
 	/*
-	 * Making and controlling the ball  
+	 * Starting the program 
 	 */
 	
-	/* The ball itself */ 
-	private GOval ball; 
-
-	/* used to keep track of the ball in play */ 
-	private int i; 
-	
-	/* x and y movement of the ball */ 
-	private double dx = VEL;
-	private double dy = VEL; 
-	
-	/* start off by building the ball */ 
-	private void buildBall(double x, double y) { 
-		ball = new GOval (x, y, 2*BALL_RADIUS, 2*BALL_RADIUS);
-		ball.setFilled(true); 
-		add(ball); 
-	}
-
-	/* check if going to the right or left of screen*/ 
-	private void checkForXCollision() { 
-		if (ball.getX() < X_BARRIER_LEFT) { 
-			dx = VEL; 
-		}
-		if (ball.getX() > X_BARRIER_RIGHT) { 
-			dx = -VEL; 
-		}
-	}
-	
-	/* check if going too high or too low */ 
-	private void checkForYCollision() { 
-		if (ball.getY() < Y_BARRIER_UP) { 
-			dy = VEL; 
-		}
-		if (ball.getY() > Y_BARRIER_DOWN) {
-			i ++ ; 
-			if (i < 4) { 
-				endGame(); //end one move of the game  
-			}
-		}
-	}
-	
-	/* resetting the game after ball falls to the bottom */ 
-	private void endGame() { 
-		remove(ball); 
+	private void setup() { 
+		buildRows(getWidth()/2 + BRICK_SEP/2, BRICK_Y_OFFSET);
+		buildBar((getWidth() - PADDLE_WIDTH)/2, BOX_HEIGHT);
 		buildBall(BALL_X_START, BALL_Y_START);
-		waitForClick(); 
 	}
 	
-	/* checking whether the ball hits the paddle */ 
-	
-	/*private void checkForPaddle() { 
-		if (ball.getY() > BOX_HEIGHT - 2*BALL_RADIUS) { 
-			if (ball.getX() > box.getX() - 1 && ball.getX() < (box.getX() + 1 + PADDLE_WIDTH)) { 
-				dy = -dy;
-				pause(TIME);
-			} 
-		}
-	}*/ 
-	
-	/* moving the ball */ 
-	private void moveBall() { 
-		if (i < 4) { // keeping track of lives 
-			ball.move(dx, dy); 
-			pause(TIME);
-		} else { 
-			stopProgram(); //executes the script to end the program  
-			}  
-	}
-	
-	/* 
-	 * Making the paddle 
-	 */
-	
-	private GRect box; 
 	
 	private void buildBar(double x, double y) { 
 		box = new GRect(x, y, PADDLE_WIDTH, PADDLE_HEIGHT); //box starts 
@@ -211,13 +114,12 @@ public class Breakout extends GraphicsProgram {
 	}
 	
 	
-/*
- * Build the bricks 	
- */
-	/* making the brick */ 
-	private GRect brick;
+	private void buildBall(double x, double y) { 
+		ball = new GOval (x, y, 2*BALL_RADIUS, 2*BALL_RADIUS);
+		ball.setFilled(true); 
+		add(ball); 
+	}
 	
-	/* building the rows */ 
 	private void buildRows(int x, int y) { 
 		double brickDif = BRICK_HEIGHT + BRICK_SEP; 
 		for (int i=0; i < N_COLOR_ROWS; i++) { 
@@ -259,49 +161,42 @@ public class Breakout extends GraphicsProgram {
 		add(brick); 
 	}
 		
-	
-	/* checking if the ball has hit a brick */ 
-	/*private void checkBrickCollision() { 
-		//checkRight(); 
-		//checkLeft(); 
-		//checkTop(); 
-		checkBottom(); 
-	}*/ 
-	
-	
-	/* check if hit the right part of the brick */ 
-	/*private void checkRight() {
-		GObject right = getElementAt(ball.getX(), ball.getY() + BALL_RADIUS); 
-		if (right != null) { 
-			if (right != ball && right != box) { 
-				remove(right); 
-				dx = -dx; 
-			}
+		
+	/*
+	 * Controlling the ball  
+	 */
+		
+	/* check if going to the right or left of screen*/ 
+	private void checkForXCollision() { 
+		if (ball.getX() < X_BARRIER_LEFT) { 
+			dx = VEL; 
 		}
-	} 
+		if (ball.getX() > X_BARRIER_RIGHT) { 
+			dx = -VEL; 
+		}
+	}
 	
-	/* check if hit the left part of the brick */ 
-	/*private void checkLeft() { 
-		GObject left = getElementAt(ball.getX() + 2*BALL_RADIUS, ball.getY() + BALL_RADIUS); 
-		if (left != null) { 
-			if (left != ball && left != box) {
-				remove(left);
-				dx = -dx;  
+	/* check if going too high or too low */ 
+	private void checkForYCollision() { 
+		if (ball.getY() < Y_BARRIER_UP) { 
+			dy = VEL; 
+		}
+		if (ball.getY() > Y_BARRIER_DOWN) {
+			i ++ ; 
+			if (i < 4) { 
+				endTurn(); //end one move of the game  
 			}
 		}
 	}
 	
-	/* check if hit the top of the brick */ 
-	/*private void checkTop() { 
-		GObject top = getElementAt(ball.getX() + BALL_RADIUS, ball.getY() + 2*BALL_RADIUS); 
-		if (top != null) { 
-			if (top != ball && top != box) { 
-				dy = -VEL; 
-				remove(top); 
-			}
-		}
-	}*/
+	/* resetting the game after ball falls to the bottom */ 
+	private void endTurn() { 
+		remove(ball); 
+		buildBall(BALL_X_START, BALL_Y_START);
+		waitForClick(); 
+	}
 	
+
 	/* check if hit the bottom of the brick */ 
 	private GObject getCollidingObject() { 
 		GObject objtop1 = getElementAt(ball.getX(), ball.getY());
@@ -321,10 +216,9 @@ public class Breakout extends GraphicsProgram {
 		} 
 	}
 	
-	GObject collision; 
 	
 	private void checkObjCollision() { 
-		collision = getCollidingObject();
+		GObject collision = getCollidingObject();
 		if (collision != null) { 
 			if (collision == box) dy = -VEL; 
 			else{ 
@@ -339,15 +233,56 @@ public class Breakout extends GraphicsProgram {
 		if (check == null) { 
 			dy = VEL;
 		}
-	} 
+	}
 	
-	/*private void checkBottom() {
-		GObject bottom = getElementAt(ball.getX(), ball.getY()); 
-		if (bottom != null &&   
-				bottom != box){ 
-					remove(bottom); 
-					dy = VEL; 
-		}
-	}*/ 
+	/* moving the ball */ 
+	private void moveBall() { 
+		if (i < 4) { // keeping track of lives 
+			ball.move(dx, dy); 
+			pause(TIME);
+		} else { 
+			stopProgram(); //executes the script to end the program  
+			}  
+	}
 	
+	
+	/*
+	 * Ending the game 
+	 */
+	
+	private void stopProgram() {
+		remove(ball); 
+		pause(200); 
+		endScreen(); 
+		makeLabel(); 
+	}
+	
+	/* Make the screen go black*/  
+	private void endScreen() { 
+		GRect end = new GRect(0, 0, WIDTH, HEIGHT);
+		end.setFilled(true); 
+		end.setColor(Color.black);
+		add(end); 
+	}
+	
+	/* Print "GAME OVER" to the screen */ 
+	private void makeLabel() { 
+		GLabel gameover = new GLabel("GAME OVER"); 
+		gameover.setFont(new Font("Courier", Font.BOLD, 30));
+		gameover.setLocation((getWidth() - gameover.getWidth())/2, HEIGHT/2);
+		gameover.setColor(Color.WHITE);
+		add(gameover); 
+	}
+	
+	
+	private GRect brick;
+	private GRect box; 
+	private GOval ball; 
+
+	/* used to keep track of the ball in play */ 
+	private int i; 
+	
+	/* x and y movement of the ball */ 
+	private double dx = VEL;
+	private double dy = VEL;  
 }
