@@ -79,9 +79,8 @@ public class Breakout extends GraphicsProgram {
 		buildBar((getWidth() - PADDLE_WIDTH)/2, BOX_HEIGHT);
 		buildBall(BALL_X_START, BALL_Y_START);
 		waitForClick();
-		while (i < 4) {   
-			checkForPaddle(); 
-			checkBrickCollision(); 
+		while (i < 4) {    
+			checkObjCollision(); 
 			checkForXCollision();
 			checkForYCollision();
 			moveBall(); 
@@ -312,13 +311,13 @@ public class Breakout extends GraphicsProgram {
 		GObject objbottom2 = getElementAt(ball.getX() + 2*BALL_RADIUS, ball.getY() + 2*BALL_RADIUS);  
 	}*/ 
 	
-	private void checkBottom() {
+	/*private void checkBottom() {
 		GObject bottom = getElementAt(ball.getX(), ball.getY()); 
 		if (bottom != null &&   
 				bottom != box){ 
 					remove(bottom); 
 					dy = VEL; 
 		}
-	} 
+	}*/ 
 	
 }
