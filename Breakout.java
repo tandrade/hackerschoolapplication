@@ -311,7 +311,6 @@ public class Breakout extends GraphicsProgram {
 			if (bottom != ball){ 
 					remove(bottom); 
 					dy = VEL; 
-				} 
 			}
 		}
 	}
