@@ -83,8 +83,7 @@ public class Breakout extends GraphicsProgram {
 		setup();
 		getStart(); 
 		waitForClick(); 
-		while (i < NTURNS + 1) {
-			bricksLeft(); 
+		while (i < NTURNS + 1) { 
 			checkObjCollision(); 
 			checkForXCollision();
 			checkForYCollision();
@@ -284,6 +283,7 @@ public class Breakout extends GraphicsProgram {
 		if (i < NTURNS + 1) { // keeping track of lives 
 			ball.move(X_VEL, Y_VEL); 
 			pause(TIME);
+			bricksLeft(); 
 		} else { 
 			stopProgram(); //executes the script to end the program  
 			}  
