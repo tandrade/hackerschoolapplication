@@ -308,7 +308,7 @@ public class Breakout extends GraphicsProgram {
 	private void checkBottom() {
 		GObject bottom = getElementAt(ball.getX(), ball.getY() + BALL_RADIUS); 
 		if (bottom != null) { 
-			if (bottom != ball){ 
+			if (bottom != ball && bottom != paddle){ 
 					remove(bottom); 
 					dy = VEL; 
 			}
