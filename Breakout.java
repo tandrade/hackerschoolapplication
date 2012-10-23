@@ -239,25 +239,26 @@ public class Breakout extends GraphicsProgram {
 	
 	private void checkObjCollision() { 
 		GObject collision = getCollidingObject();
+		Color test = collision.getColor(); 
 		if (collision != null) { 
 			if (collision == box) Y_VEL = -Y_VEL; 
 			else{ 
 				remove(collision);
-				safeMove(); 
+				safeMove(test); 
 			}
 		} 
 	}
 	
-	private void safeMove() {
+	private void safeMove(Color color) {
 		GObject check = getCollidingObject();
 		if (check != null) { 
 			remove(check); 
 			Y_VEL = -Y_VEL; 
-			getScore(); 
+			getScore(color); 
 		}
 		if (check == null) { 
 			Y_VEL = -Y_VEL;
-			getScore(); 
+			getScore(color); 
 		}
 	}
 	
@@ -268,12 +269,12 @@ public class Breakout extends GraphicsProgram {
 		showScore(); 
 	}
 	
-	private int scoreChoice() { 
-		if (collision.getColor() == Color.CYAN) return BASE_SCORE;
-		if (collision.getColor() == Color.GREEN) return 3*(BASE_SCORE/2);   
-		if (collision.getColor() == Color.YELLOW) return 2*BASE_SCORE; 	
-		if (collision.getColor() == Color.ORANGE) return 5*(BASE_SCORE/2); 
-		if (collision.getColor() == Color.RED) return 3*BASE_SCORE;
+	private int scoreChoice(Color color) { 
+		if (color == Color.CYAN) return BASE_SCORE;
+		if (color == Color.GREEN) return 3*(BASE_SCORE/2);   
+		if (color == Color.YELLOW) return 2*BASE_SCORE; 	
+		if (color == Color.ORANGE) return 5*(BASE_SCORE/2); 
+		if (color == Color.RED) return 3*BASE_SCORE;
 		else return 0; 
 	}
 	
