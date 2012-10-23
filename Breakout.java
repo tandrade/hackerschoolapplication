@@ -260,10 +260,13 @@ public class Breakout extends GraphicsProgram {
 	
 	private void showScore() {  
 		GLabel scorecard = new GLabel("Score: " + score);
-		remove(scorecard); 
 		scorecard.setColor(Color.WHITE);
 		scorecard.setFont(new Font("Courier", Font.BOLD, 12));
 		scorecard.setLocation((getWidth()/4 - scorecard.getWidth())/2, 20);
+	}
+	
+	private void updateScore() { 
+		remove(scorecard); 
 	}
 	
 	/* moving the ball */ 
@@ -308,7 +311,8 @@ public class Breakout extends GraphicsProgram {
 	
 	private GRect brick;
 	private GRect box; 
-	private GOval ball; 
+	private GOval ball;
+	private GLabel scorecard;
 
 	/* used to keep track of the ball in play */ 
 	private int i; 
