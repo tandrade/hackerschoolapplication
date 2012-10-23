@@ -308,9 +308,11 @@ public class Breakout extends GraphicsProgram {
 	private void checkBottom() {
 		GObject bottom = getElementAt(ball.getX() + BALL_RADIUS, ball.getY()); 
 		if (bottom != null) { 
-			if (bottom != ball && bottom != box) {
+			if (bottom != ball){ 
+				if (bottom != box) {
 				remove(bottom); 
 				dy = -dy; 
+				} 
 			}
 		}
 	}
