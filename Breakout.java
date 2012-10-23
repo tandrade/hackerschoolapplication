@@ -306,7 +306,10 @@ public class Breakout extends GraphicsProgram {
 	
 	/* check if hit the bottom of the brick */ 
 	private void getCollidingObject() { 
-		GObject objtop = getElementAt(ball.getX(), ball.getY());  
+		GObject objtop1 = getElementAt(ball.getX(), ball.getY());
+		GObject objtop2 = getElementAt(ball.getX() + 2*BALL_RADIUS, ball.getY());
+		GObject objbottom1 = getElementAt(ball.getX(), ball.getY() + 2*BALL_RADIUS); 
+		GObject objbottom2 = getElementAt(ball.getX() + 2*BALL_RADIUS, ball.getY() + 2*BALL_RADIUS);  
 	}
 	
 	/*private void checkBottom() {
