@@ -330,6 +330,7 @@ public class Breakout extends GraphicsProgram {
 			else {
 				remove(collision);
 				pause(300); 
+				dy = VEL; 
 				
 			}
 		}
