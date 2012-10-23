@@ -318,6 +318,14 @@ public class Breakout extends GraphicsProgram {
 		add(gameover); 
 	}
 	
+	private void gameWon() { 
+		GLabel gamewon = new GLabel("Congratulations!")
+		gamewon.setFont(new Font("Courier", Font.BOLD, 30));
+		gamewon.setLocation((getWidth() - gamewon.getWidth())/2, HEIGHT/2); 
+		gamewon.setColor(Color.WHITE); 
+		add(gameWon); 
+	}
+	
 	
 	private GRect brick;
 	private GRect box; 
