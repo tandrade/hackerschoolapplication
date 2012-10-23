@@ -325,7 +325,7 @@ public class Breakout extends GraphicsProgram {
 	
 	private void checkObjCollision() { 
 		GObject collision = getCollidingObject(); 
-		if (collision != null) { 
+		while (collision != null) { 
 			if (collision == box) dy=-VEL; 
 			else { 
 				remove(collision); 
