@@ -83,7 +83,7 @@ public class Breakout extends GraphicsProgram {
 		setup();
 		getStart(); 
 		waitForClick(); 
-		while (i < 4) {
+		while (i < NTURNS + 1) {
 			checkObjCollision(); 
 			checkForXCollision();
 			checkForYCollision();
@@ -280,7 +280,7 @@ public class Breakout extends GraphicsProgram {
 	
 	/* moving the ball */ 
 	private void moveBall() { 
-		if (i < 4) { // keeping track of lives 
+		if (i < NTURNS + 1) { // keeping track of lives 
 			ball.move(X_VEL, Y_VEL); 
 			pause(TIME);
 		} else { 
@@ -316,6 +316,13 @@ public class Breakout extends GraphicsProgram {
 		gameover.setLocation((getWidth() - gameover.getWidth())/2, HEIGHT/2);
 		gameover.setColor(Color.WHITE);
 		add(gameover); 
+	}
+	
+	private void bricksLeft() { 
+		for (i=0; i > WIDTH; i = i + BRICK_WIDTH + BRICK_SEP) { 
+			for (j= BRICK_Y_OFFSET; j > )
+		}
+		GObject test = getElementAt()
 	}
 	
 	private void gameWon() { 
