@@ -112,14 +112,16 @@ public class Breakout extends GraphicsProgram {
 	}
 	
 	public void mouseMoved(MouseEvent e) {
-		double x = e.getX(); 
-		if (x > APPLICATION_WIDTH - PADDLE_WIDTH) {  //box doesn't go offscreen  
-			x = APPLICATION_WIDTH - PADDLE_WIDTH; 
-		}
-		remove(box); //erase where box was before 
-		box.setLocation(x, BOX_HEIGHT); //update box coordinates
-		box.setColor(Color.WHITE); 
-		add(box); //add box 
+		if (i < 4) { 
+			double x = e.getX(); 
+			if (x > APPLICATION_WIDTH - PADDLE_WIDTH) { //box doesn't go offscreen  
+				x = APPLICATION_WIDTH - PADDLE_WIDTH;
+			}
+			remove(box); //erase where box was before 
+			box.setLocation(x, BOX_HEIGHT); //update box coordinates
+			box.setColor(Color.WHITE); 
+			add(box); //add box
+		} 
 	}
 	
 	
@@ -304,7 +306,7 @@ public class Breakout extends GraphicsProgram {
 		end.setFilled(true); 
 		end.setColor(Color.black);
 		add(end);
-		remove(box); 
+		; 
 	}
 	
 	/* Print "GAME OVER" to the screen */ 
