@@ -330,13 +330,16 @@ public class Breakout extends GraphicsProgram {
 			if (collision == box) dy = -VEL; 
 			else{ 
 				remove(collision);
-				if (collision == null) { 
-					dy = -dy; 
+				safeMove(); 
 				}
 			}
 		} 
 	}
 	
+	private void safeMove() {
+		if (collision == null) { 
+			dy = VEL; 
+	} 
 	
 	/*private void checkBottom() {
 		GObject bottom = getElementAt(ball.getX(), ball.getY()); 
