@@ -73,13 +73,12 @@ public class Breakout extends GraphicsProgram {
 /* Method: run() */
 /** Runs the Breakout program. */
 	public void run() { 
-		if (rgen.nextBoolean(0.5)) X_VEL = -X_VEL;
 		i = 1; 
 		addMouseListeners();
 		setup(); 
 		waitForClick();
-		//getStart(); 
-		while (i < 4) {    
+		getStart(); 
+		while (i < 4) {
 			checkObjCollision(); 
 			checkForXCollision();
 			checkForYCollision();
