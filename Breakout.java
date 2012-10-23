@@ -73,8 +73,6 @@ public class Breakout extends GraphicsProgram {
 /* Method: run() */
 /** Runs the Breakout program. */
 	public void run() { 
-		Y_VEL = rgen.nextDouble(1.0, 3.0);
-		X_VEL = rgen.nextDouble(1.0, 3.0);
 		i = 1; 
 		addMouseListeners();
 		setup();
@@ -294,8 +292,9 @@ public class Breakout extends GraphicsProgram {
 	
 
 	private RandomGenerator rgen = RandomGenerator.getInstance();
-	private double X_VEL; 
-	private double Y_VEL; 
+	private double X_VEL = rgen.nextDouble(1.0, 3.0); 
+	private double Y_VEL = rgen.nextDouble(1.0, 3.0);
+	X_VEL = rgen.nextDouble(1.0, 3.0);; 
 	/* x and y movement of the ball */ 
 	private double dx = X_VEL;
 	private double dy = Y_VEL;
