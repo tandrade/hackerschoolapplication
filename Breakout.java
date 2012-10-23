@@ -239,7 +239,7 @@ public class Breakout extends GraphicsProgram {
 	
 	private void checkObjCollision() { 
 		GObject collision = getCollidingObject();
-		new Color brickColor = collision.getColor(); 
+		Color brickColor = collision.getColor(); 
 		if (collision != null) { 
 			if (collision == box) Y_VEL = -Y_VEL; 
 			else{ 
