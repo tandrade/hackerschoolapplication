@@ -69,6 +69,7 @@ public class Breakout extends GraphicsProgram {
 	private static final int N_COLOR_ROWS = NBRICK_ROWS/5;
 	private static final int TIME = 10; 
 	private static double brickDif = BRICK_HEIGHT + BRICK_SEP; 
+	private static double SCORE_OFFSET = BRICK_Y_OFFSET / 5; 
 	
 /* Method: run() */
 /** Runs the Breakout program. */
