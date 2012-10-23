@@ -74,6 +74,7 @@ public class Breakout extends GraphicsProgram {
 /** Runs the Breakout program. */
 	public void run() { 
 		i = 1; 
+		setBackground(Color.BLACK);
 		addMouseListeners();
 		setup();
 		getStart();
