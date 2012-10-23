@@ -332,7 +332,6 @@ public class Breakout extends GraphicsProgram {
 			else {
 				bounce(); 
 				remove(collision);
-				bounce();  
 			}
 		}
 	}
