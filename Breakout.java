@@ -189,6 +189,10 @@ public class Breakout extends GraphicsProgram {
 			}  
 	}
 	
+	private void checkBounce() { 
+		if (bounce = 0) dy = dy; 
+		else dy = -dy; 
+	}
 	
 	/* 
 	 * Making the paddle 
@@ -337,10 +341,6 @@ public class Breakout extends GraphicsProgram {
 	}
 	
 	int bounce = 0; 
-	
-	private void bounce() {
-		dy = -dy; 
-	}
 	
 	/*private void checkBottom() {
 		GObject bottom = getElementAt(ball.getX(), ball.getY()); 
