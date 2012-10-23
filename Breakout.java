@@ -69,6 +69,7 @@ public class Breakout extends GraphicsProgram {
 	private static final int VEL = 1;
 	private static final int N_COLOR_ROWS = NBRICK_ROWS/5;
 	private static final int TIME = 5; 
+	private static double brickDif = BRICK_HEIGHT + BRICK_SEP; 
 	
 /* Method: run() */
 /** Runs the Breakout program. */
@@ -121,7 +122,6 @@ public class Breakout extends GraphicsProgram {
 	}
 	
 	private void buildRows(int x, int y) { 
-		double brickDif = BRICK_HEIGHT + BRICK_SEP; 
 		for (int i=0; i < N_COLOR_ROWS; i++) { 
 			drawRow(x, y + brickDif*i, Color.RED);
 		} 
