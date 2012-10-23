@@ -336,7 +336,7 @@ public class Breakout extends GraphicsProgram {
 	}
 	
 	private void safeMove() {
-		if (collision == null) { 
+		if (getCollidingObject == null) { 
 			dy = VEL;
 		}
 	} 
