@@ -319,8 +319,11 @@ public class Breakout extends GraphicsProgram {
 	}
 	
 	private void bricksLeft() { 
-		for (i=0; i > WIDTH; i = i + BRICK_WIDTH + BRICK_SEP) { 
-			for (j= BRICK_Y_OFFSET; j > )
+		for (int k=0; k > WIDTH; k = k + BRICK_WIDTH + BRICK_SEP) { 
+			for (int m= BRICK_Y_OFFSET; m > (NBRICK_ROWS*5 + 1); m++) { 
+				GObject test = getElementAt(k, j);
+				
+			}
 		}
 		GObject test = getElementAt()
 	}
