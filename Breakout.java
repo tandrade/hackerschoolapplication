@@ -72,9 +72,7 @@ public class Breakout extends GraphicsProgram {
 	
 /* Method: run() */
 /** Runs the Breakout program. */
-	public void run() {
-		Y_VEL = rgen.nextDouble(1.0, 3.0);
-		X_VEL = rgen.nextDouble(1.0, 3.0); 
+	public void run() { 
 		if (rgen.nextBoolean(0.5)) X_VEL = -X_VEL;
 		i = 1; 
 		addMouseListeners();
