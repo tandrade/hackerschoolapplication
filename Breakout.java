@@ -81,8 +81,7 @@ public class Breakout extends GraphicsProgram {
 		setBackground(Color.BLACK);
 		addMouseListeners();
 		setup();
-		getStart();
-		showScore(); 
+		getStart(); 
 		waitForClick(); 
 		while (i < 4) {
 			checkObjCollision(); 
@@ -101,6 +100,7 @@ public class Breakout extends GraphicsProgram {
 		buildRows(getWidth()/2 + BRICK_SEP/2, BRICK_Y_OFFSET);
 		buildBar((getWidth() - PADDLE_WIDTH)/2, BOX_HEIGHT);
 		buildBall(BALL_X_START, BALL_Y_START);
+		showScore();
 	}
 	
 	
