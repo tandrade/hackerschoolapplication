@@ -240,7 +240,6 @@ public class Breakout extends GraphicsProgram {
 		if (collision != null) { 
 			if (collision == box) Y_VEL = -Y_VEL; 
 			else{ 
-				getScore();
 				remove(collision);
 				safeMove(); 
 			}
@@ -251,6 +250,7 @@ public class Breakout extends GraphicsProgram {
 		GObject check = getCollidingObject(); 
 		if (check == null) { 
 			Y_VEL = -Y_VEL;
+			getScore(); 
 		}
 	}
 	
