@@ -327,6 +327,7 @@ public class Breakout extends GraphicsProgram {
 				else gameWon(); 
 			}
 		}
+		gameWon(); 
 	}
 	
 	private void gameWon() { 
