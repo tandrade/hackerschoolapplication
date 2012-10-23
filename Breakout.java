@@ -75,9 +75,9 @@ public class Breakout extends GraphicsProgram {
 	public void run() { 
 		i = 1; 
 		addMouseListeners();
-		setup(); 
-		waitForClick();
-		getStart(); 
+		setup();
+		getStart();
+		waitForClick(); 
 		while (i < 4) {
 			checkObjCollision(); 
 			checkForXCollision();
