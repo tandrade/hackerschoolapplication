@@ -89,11 +89,14 @@ public class Breakout extends GraphicsProgram {
 /* Method: run() */
 /** Runs the Breakout program. */
 	public void run() { 
+		/** adding parameters */ 
 		gameFinished = false; 
 		brickcount = 0; 
 		i = 1; 
 		score = 0; 
 		setBackground(Color.BLACK);
+		
+		/** the game */ 
 		addMouseListeners();
 		setup();
 		getStart(); 
@@ -187,6 +190,14 @@ public class Breakout extends GraphicsProgram {
 	 * Game play 
 	 */
 	
+	private void getStart() { 
+		RandomGenerator rgen = RandomGenerator.getInstance(); 
+		Y_VEL = rgen.nextDouble(2.0, 4.0);
+		X_VEL = rgen.nextDouble(2.0, 4.0); 
+		if (rgen.nextBoolean(0.5)) X_VEL = -X_VEL;
+	}
+	
+	
 	private void playGame() { 
 		while (gameFinished == false) { 
 			checkObjCollision(); 
@@ -197,19 +208,11 @@ public class Breakout extends GraphicsProgram {
 		}
 	}
 	
-		
+	
 	/*
 	 * Controlling the ball  
 	 */
 		
-	
-	private void getStart() { 
-		RandomGenerator rgen = RandomGenerator.getInstance(); 
-		Y_VEL = rgen.nextDouble(2.0, 4.0);
-		X_VEL = rgen.nextDouble(2.0, 4.0); 
-		if (rgen.nextBoolean(0.5)) X_VEL = -X_VEL;
-	}
-	
 	/* check if going to the right or left of screen*/ 
 	private void checkForXCollision() { 
 		if (ball.getX() < X_BARRIER_LEFT) { 
@@ -274,9 +277,6 @@ public class Breakout extends GraphicsProgram {
 				}
 			}
 		}
-		
-		
-		
 	}
 	
 	
