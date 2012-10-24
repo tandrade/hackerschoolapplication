@@ -233,7 +233,7 @@ public class Breakout extends GraphicsProgram {
 			if (objtop1 != objtop2) objtop2 = null; 
 		}
 		if (objtop1 != null & objbottom1 != null) { 
-			if (objtop1 != objtop3) objtop3 = null; 
+			if (objtop1 != objbottom1) objbottom1 = null; 
 		}
 		if (objbottom1 != null & objbottom2 != null) { 
 			if (objbottom1 != objbottom2) objbottom2 = null; 
