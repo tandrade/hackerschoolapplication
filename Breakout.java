@@ -309,6 +309,7 @@ public class Breakout extends GraphicsProgram {
 	 */
 	
 	private void stopProgram() {
+		gameFinished = true; 
 		remove(ball); 
 		pause(200); 
 		endScreen(); 
