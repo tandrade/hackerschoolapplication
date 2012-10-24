@@ -404,19 +404,20 @@ public class Breakout extends GraphicsProgram {
 	}
 	
 	
-	
-	private GRect brick;
-	private GRect box; 
+	/** Gobjects called by multiple methods */ 
+	private GRect brick;	
+	private GRect box; 		
 	private GOval ball;
 	private GLabel scorecard;
 	private GLabel livesdisp;
-	private GObject collision;
+	
+	/** boolean commands called by multiple objects */ 
 	private boolean gameFinished;  
 
+	/** numbers changed by multiple programs */ 
 	private int i; 
 	private int score; 
 	private int brickcount; 
-
 	private double X_VEL; 
 	private double Y_VEL; 
 	
