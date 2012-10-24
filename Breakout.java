@@ -267,7 +267,7 @@ public class Breakout extends GraphicsProgram {
 		}
 		if (check == null) { 
 			Y_VEL = -Y_VEL;
-			addPoints(); 
+			//addPoints(); 
 		}
 	}
 	
