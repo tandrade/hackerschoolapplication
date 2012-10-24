@@ -184,8 +184,6 @@ public class Breakout extends GraphicsProgram {
 		Y_VEL = rgen.nextDouble(1.0, 3.0);
 		X_VEL = rgen.nextDouble(1.0, 3.0); 
 		if (rgen.nextBoolean(0.5)) X_VEL = -X_VEL;
-		//Y_VEL = 1;
-		//X_VEL = 1; 
 	}
 	
 	/* check if going to the right or left of screen*/ 
@@ -205,7 +203,8 @@ public class Breakout extends GraphicsProgram {
 		}
 		if (ball.getY() > Y_BARRIER_DOWN) {
 			i ++ ; 
-			if (i < 4) { 
+			if (i < 4) {
+				showLives();
 				endTurn(); //end one move of the game  
 			}
 		}
