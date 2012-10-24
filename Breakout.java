@@ -341,7 +341,6 @@ public class Breakout extends GraphicsProgram {
 	private int score; 
 	private double X_VEL; 
 	private double Y_VEL; 
-	private int lives = i;
 	/* x and y movement of the ball */ 
 	//private double dx = X_VEL;
 	//private double dy = Y_VEL;
