@@ -59,18 +59,31 @@ public class Breakout extends GraphicsProgram {
 	
 /** Y-coordinate for the box */ 	
 	private static final int BOX_HEIGHT = HEIGHT - PADDLE_Y_OFFSET - PADDLE_HEIGHT;
-	
+
+/** X and Y coordinate for the ball */ 	
 	private static final int BALL_X_START = WIDTH/2 - BALL_RADIUS;
-	private static final int BALL_Y_START = BOX_HEIGHT - 150; 
+	private static final int BALL_Y_START = BOX_HEIGHT - 150;
+	
+/** X and Y coordinate for the barriers */ 	
 	private static final int X_BARRIER_LEFT = 2;
 	private static final int X_BARRIER_RIGHT = WIDTH - 2*BALL_RADIUS; 
 	private static final int Y_BARRIER_UP = 2*BALL_RADIUS; 
-	private static final int Y_BARRIER_DOWN = HEIGHT - 4*BALL_RADIUS; 
+	private static final int Y_BARRIER_DOWN = HEIGHT - 4*BALL_RADIUS;
+	
+/** Number of rows for each color */	
 	private static final int N_COLOR_ROWS = NBRICK_ROWS/5;
-	private static final int TIME = 10; 
-	private static double brickDif = BRICK_HEIGHT + BRICK_SEP; 
+	
+/** Time to wait between movements */ 	
+	private static final int TIME = 10;
+	
+/** Difference between bricks */ 	
+	private static double brickDif = BRICK_HEIGHT + BRICK_SEP;
+	
+/** How high to make the scoreboard */	
 	private static int SCORE_OFFSET = BRICK_Y_OFFSET / 3;
 	private static int SCORE_SIZE = SCORE_OFFSET / 2;
+	
+/** How much each brick is worth */ 	
 	private static int BASE_SCORE = 10; 
 	
 /* Method: run() */
