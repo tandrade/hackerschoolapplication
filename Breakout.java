@@ -283,7 +283,7 @@ public class Breakout extends GraphicsProgram {
 		livesdisp.setColor(Color.WHITE);
 		livesdisp.setFont(new Font("Courier", Font.BOLD, SCORE_SIZE));
 		livesdisp.setLocation((3*getWidth()/4 - livesdisp.getWidth())/2, SCORE_OFFSET);
-		add(lives); 
+		add(livesdisp); 
 	}
 	
 	/* moving the ball */ 
