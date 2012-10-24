@@ -255,7 +255,7 @@ public class Breakout extends GraphicsProgram {
 				} 
 			}
 		} 
-		if (livesdisp == null) add livesdisp; 
+		if (livesdisp == null) add(livesdisp); 
 	}
 	
 	private void safeMove() {
