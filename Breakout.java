@@ -331,6 +331,7 @@ public class Breakout extends GraphicsProgram {
 	private GRect box; 
 	private GOval ball;
 	private GLabel scorecard;
+	private GLabel livesdisp;
 	private GObject collision; 
 
 	/* used to keep track of the ball in play */ 
