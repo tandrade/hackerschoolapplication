@@ -76,6 +76,7 @@ public class Breakout extends GraphicsProgram {
 /* Method: run() */
 /** Runs the Breakout program. */
 	public void run() { 
+		brickcount = 0; 
 		i = 1; 
 		score = 0; 
 		setBackground(Color.BLACK);
