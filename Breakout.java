@@ -310,7 +310,7 @@ public class Breakout extends GraphicsProgram {
 		remove(ball); 
 		pause(200); 
 		endScreen(); 
-		makeLabel(); 
+		makeLoseLabel(); 
 	}
 	
 	/* Make the screen go black*/  
@@ -323,7 +323,7 @@ public class Breakout extends GraphicsProgram {
 	}
 	
 	/* Print "GAME OVER" to the screen */ 
-	private void makeLabel() { 
+	private void makeLoseLabel() { 
 		GLabel gameover = new GLabel("GAME OVER"); 
 		gameover.setFont(new Font("Courier", Font.BOLD, 30));
 		gameover.setLocation((getWidth() - gameover.getWidth())/2, HEIGHT/2);
@@ -332,10 +332,20 @@ public class Breakout extends GraphicsProgram {
 	}
 	
 	private void checkIfDone() { 
-		if (brickcount == NBRICKS_PER_ROW * NROWS) { 
-			
+		if (brickcount == NBRICKS_PER_ROW * NBRICK_ROWS) { 
+			remove(ball); 
+			makeWinLabel(); 
 		}
 	}
+	
+	private void makeWinLabel() { 
+		GLabel congrats = new GLabel("Congratulations"); 
+		congrats.setFont(new Font("Courier", Font.BOLD, 30));
+		congrats.setLocation((getWidth() - congrats.getWidth())/2, HEIGHT/2);
+		congrats.setColor(Color.WHITE);
+		add(congrats); 
+	}
+	
 	
 	
 	private GRect brick;
