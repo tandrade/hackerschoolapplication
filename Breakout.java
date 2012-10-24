@@ -218,7 +218,6 @@ public class Breakout extends GraphicsProgram {
 		remove(ball); 
 		buildBall(BALL_X_START, BALL_Y_START);
 		getStart(); 
-		waitForClick(); 
 	}
 	
 
