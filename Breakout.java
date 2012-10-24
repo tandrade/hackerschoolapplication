@@ -336,17 +336,11 @@ public class Breakout extends GraphicsProgram {
 	private GLabel livesdisp;
 	private GObject collision; 
 
-	/* used to keep track of the ball in play */ 
 	private int i; 
-	
-
-	//private RandomGenerator rgen = RandomGenerator.getInstance();
 	private int score; 
+
 	private double X_VEL; 
 	private double Y_VEL; 
-	/* x and y movement of the ball */ 
-	//private double dx = X_VEL;
-	//private double dy = Y_VEL;
 	
 	
 	
