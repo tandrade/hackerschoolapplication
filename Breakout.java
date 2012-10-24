@@ -248,6 +248,7 @@ public class Breakout extends GraphicsProgram {
 			else{
 				if (collision != livesdisp) { 
 					remove(collision);
+					brickcount = brickcount + 1; 
 					safeMove();
 				} 
 			}
