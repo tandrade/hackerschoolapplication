@@ -335,6 +335,7 @@ public class Breakout extends GraphicsProgram {
 	private void checkIfDone() { 
 		if (brickcount == NBRICKS_PER_ROW * NBRICK_ROWS) { 
 			remove(ball); 
+			gameFinished == true; 
 			makeWinLabel(); 
 		}
 	}
