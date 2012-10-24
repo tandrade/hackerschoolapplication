@@ -245,7 +245,7 @@ public class Breakout extends GraphicsProgram {
 		&& collision != scorecard) { 
 			if (collision == box) Y_VEL = -Y_VEL; 
 			else{
-				if (collision != livedisp) { 
+				if (collision != livesdisp) { 
 					remove(collision);
 					safeMove();
 				} 
