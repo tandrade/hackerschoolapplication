@@ -153,7 +153,7 @@ public class Breakout extends GraphicsProgram {
 
 	/* filling in the rows - part 1 */ 
 	private void drawRow(double x, double y, Color color){
-		for (int i=0; i < NBRICKS_PER_ROW ; i++) { 
+		for (int i=1; i < NBRICKS_PER_ROW + 1 ; i++) { 
 			double n = i/2;
 			double x_right = x + n*BRICK_WIDTH + n*BRICK_SEP; 
 			double x_left = x - (n +1)*BRICK_WIDTH - (n + 1)*BRICK_SEP; 
