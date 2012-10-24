@@ -228,6 +228,10 @@ public class Breakout extends GraphicsProgram {
 		GObject objtop2 = getElementAt(ball.getX() + 2*BALL_RADIUS, ball.getY());
 		GObject objbottom1 = getElementAt(ball.getX(), ball.getY() + 2*BALL_RADIUS);
 		GObject objbottom2 = getElementAt(ball.getX() + 2*BALL_RADIUS, ball.getY() + 2*BALL_RADIUS);
+		
+		if (objtop1 == objtop2) objtop1 = objtop2; 
+		if (objbottom1 == objbottom2) objbottom1 = objbottom2; 
+		
 		if (objtop1 != null) return objtop1; 
 		else {
 			if (objtop2 != null) return objtop2; 
@@ -238,7 +242,10 @@ public class Breakout extends GraphicsProgram {
 					else return null; 
 				}
 			}
-		} 
+		}
+		
+		
+		
 	}
 	
 	
