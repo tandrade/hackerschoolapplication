@@ -355,7 +355,7 @@ public class Breakout extends GraphicsProgram {
 	private GLabel scorecard;
 	private GLabel livesdisp;
 	private GObject collision;
-	private boolean gameDone == false;  
+	private boolean gameFinished == false;  
 
 	private int i; 
 	private int score; 
