@@ -265,6 +265,7 @@ public class Breakout extends GraphicsProgram {
 			if (collision == box) Y_VEL = -Y_VEL; 
 			else{
 				if (collision != livesdisp) { 
+					getScore(); 
 					remove(collision);
 					brickcount = brickcount + 1; 
 					safeMove();
@@ -278,7 +279,7 @@ public class Breakout extends GraphicsProgram {
 		if (check != null) { 
 			remove(check); 
 			Y_VEL = -Y_VEL; 
-			getScore(); 
+			//getScore(); 
 		}
 		if (check == null) { 
 			Y_VEL = -Y_VEL;
