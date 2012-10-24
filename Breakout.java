@@ -277,16 +277,13 @@ public class Breakout extends GraphicsProgram {
 		add(scorecard); 
 	}
 	
-	private void getLives() {
-		int lives = i;
-		remove(livesdisp);
-	}
-	
 	private void showLives() {
-		GLabel livesdisp = new GLabel("Lives:" + lives);
+		GLabel livesdisp = new GLabel("Lives:" + i);
+		remove(livesdisp); 
 		livesdisp.setColor(Color.WHITE);
 		livesdisp.setFont(new Font("Courier", Font.BOLD, SCORE_SIZE));
-		livesdisp.setLocation((3*getWidth()/4 - livesdisp.getWidth())/2, SCORE_OFFSET); 
+		livesdisp.setLocation((3*getWidth()/4 - livesdisp.getWidth())/2, SCORE_OFFSET);
+		add(lives); 
 	}
 	
 	/* moving the ball */ 
