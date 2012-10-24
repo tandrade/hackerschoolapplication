@@ -415,7 +415,7 @@ public class Breakout extends GraphicsProgram {
 	private boolean gameFinished;  
 
 	/** numbers changed by multiple programs */ 
-	private int i; 
+	private int i; 			//number of lives 
 	private int score; 
 	private int brickcount; 
 	private double X_VEL; 
