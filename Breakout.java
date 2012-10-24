@@ -249,13 +249,11 @@ public class Breakout extends GraphicsProgram {
 			else{
 				if (collision != livesdisp) { 
 					remove(collision);
-					brickcount = brickcount + 1;
-					addPoints(); 
+					brickcount = brickcount + 1; 
 					safeMove();
 				} 
 			}
 		} 
-		if (livesdisp == null) add(livesdisp); 
 	}
 	
 	private void safeMove() {
@@ -263,15 +261,15 @@ public class Breakout extends GraphicsProgram {
 		if (check != null) { 
 			remove(check); 
 			Y_VEL = -Y_VEL; 
-			addPoints(); 
+			getScore(); 
 		}
 		if (check == null) { 
 			Y_VEL = -Y_VEL;
-			//addPoints(); 
+			getScore(); 
 		}
 	}
 	
-	private void addPoints() { 
+	private void getScore() { 
 		score = score + BASE_SCORE; 
 		remove(scorecard); 
 		showScore(); 
