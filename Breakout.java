@@ -331,6 +331,12 @@ public class Breakout extends GraphicsProgram {
 		add(gameover); 
 	}
 	
+	private void checkIfDone() { 
+		if (brickcount == NBRICKS_PER_ROW * NROWS) { 
+			
+		}
+	}
+	
 	
 	private GRect brick;
 	private GRect box; 
