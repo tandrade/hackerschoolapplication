@@ -218,6 +218,7 @@ public class Breakout extends GraphicsProgram {
 		remove(ball); 
 		buildBall(BALL_X_START, BALL_Y_START);
 		getStart(); 
+		waitForClick(); 
 	}
 	
 
@@ -280,11 +281,9 @@ public class Breakout extends GraphicsProgram {
 		if (check != null) { 
 			remove(check); 
 			Y_VEL = -Y_VEL; 
-			//getScore(); 
 		}
 		if (check == null) { 
-			Y_VEL = -Y_VEL;
-		//	getScore(); 
+			Y_VEL = -Y_VEL; 
 		}
 	}
 	
