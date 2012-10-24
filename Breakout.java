@@ -283,7 +283,6 @@ public class Breakout extends GraphicsProgram {
 		if (i < NTURNS + 1) { // keeping track of lives 
 			ball.move(X_VEL, Y_VEL); 
 			pause(TIME);
-			bricksLeft(); 
 		} else { 
 			stopProgram(); //executes the script to end the program  
 			}  
@@ -317,19 +316,6 @@ public class Breakout extends GraphicsProgram {
 		gameover.setLocation((getWidth() - gameover.getWidth())/2, HEIGHT/2);
 		gameover.setColor(Color.WHITE);
 		add(gameover); 
-	}
-	
-	private void bricksLeft() { 
-		GObject search = getElementAt(brick.getX(), brick.getY());
-		if (search == null) gameWon(); 
-	}
-	
-	private void gameWon() { 
-		GLabel gamewon = new GLabel("Congratulations!");
-		gamewon.setFont(new Font("Courier", Font.BOLD, 30));
-		gamewon.setLocation((getWidth() - gamewon.getWidth())/2, HEIGHT/2); 
-		gamewon.setColor(Color.WHITE); 
-		add(gamewon); 
 	}
 	
 	
