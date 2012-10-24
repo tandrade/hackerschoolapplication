@@ -373,7 +373,7 @@ public class Breakout extends GraphicsProgram {
 	private GRect box; 
 	private GOval ball;
 	private GLabel scorecard;
-	private GLabel livesdisp;
+	private GLabel livesdisp = GLabel("Score: " + i);
 	private GObject collision;
 	private boolean gameFinished;  
 
