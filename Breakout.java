@@ -339,6 +339,7 @@ public class Breakout extends GraphicsProgram {
 
 	private int i; 
 	private int score; 
+	private int brickcount; 
 
 	private double X_VEL; 
 	private double Y_VEL; 
