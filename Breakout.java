@@ -302,8 +302,7 @@ public class Breakout extends GraphicsProgram {
 	}
 	
 	private void showLives() {
-		String str= "Life " + i; 
-		GLabel livesdisp = GLabel(str);
+		livesdisp = new GLabel("Lives: " + i);
 		if (livesdisp != null) remove(livesdisp); 
 		livesdisp.setColor(Color.WHITE);
 		livesdisp.setFont(new Font("Courier", Font.BOLD, SCORE_SIZE));
