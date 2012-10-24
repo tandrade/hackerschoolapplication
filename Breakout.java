@@ -184,8 +184,8 @@ public class Breakout extends GraphicsProgram {
 	
 	private void getStart() { 
 		RandomGenerator rgen = RandomGenerator.getInstance(); 
-		Y_VEL = rgen.nextDouble(1.0, 3.0);
-		X_VEL = rgen.nextDouble(1.0, 3.0); 
+		Y_VEL = rgen.nextDouble(2.0, 5.0);
+		X_VEL = rgen.nextDouble(2.0, 5.0); 
 		if (rgen.nextBoolean(0.5)) X_VEL = -X_VEL;
 	}
 	
