@@ -320,7 +320,8 @@ public class Breakout extends GraphicsProgram {
 	}
 	
 	private void bricksLeft() { 
-		if (brick == null) gameWon(); 
+		GObject search = getElementAt(brick.getX(), brick.getY());
+		if (search == null) gameWon(); 
 	}
 	
 	private void gameWon() { 
