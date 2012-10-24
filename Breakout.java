@@ -109,6 +109,7 @@ public class Breakout extends GraphicsProgram {
 	 * Starting the program 
 	 */
 	
+	/** run all the start up commands */ 
 	private void setup() { 
 		buildRows(getWidth()/2 + BRICK_SEP/2, BRICK_Y_OFFSET);
 		buildBar((getWidth() - PADDLE_WIDTH)/2, BOX_HEIGHT);
@@ -117,7 +118,7 @@ public class Breakout extends GraphicsProgram {
 		showLives();
 	}
 	
-	
+	/** build the paddle */ 
 	private void buildBar(double x, double y) { 
 		box = new GRect(x, y, PADDLE_WIDTH, PADDLE_HEIGHT); //box starts 
 		box.setFilled(true); 
@@ -125,20 +126,21 @@ public class Breakout extends GraphicsProgram {
 		add(box); 
 	}
 	
+	/* control the paddle */ 
 	public void mouseMoved(MouseEvent e) {
 		if (i < NTURNS + 1) { 
 			double x = e.getX(); 
 			if (x > APPLICATION_WIDTH - PADDLE_WIDTH) { //box doesn't go offscreen  
 				x = APPLICATION_WIDTH - PADDLE_WIDTH;
 			}
-			remove(box); //erase where box was before 
-			box.setLocation(x, BOX_HEIGHT); //update box coordinates
+			remove(box); //erase where paddle was before 
+			box.setLocation(x, BOX_HEIGHT); //update paddle coordinates
 			box.setColor(Color.WHITE); 
-			add(box); //add box
+			add(box); //add the paddle 
 		} 
 	}
 	
-	
+	/** build the ball */ 
 	private void buildBall(double x, double y) { 
 		ball = new GOval (x, y, 2*BALL_RADIUS, 2*BALL_RADIUS);
 		ball.setFilled(true); 
@@ -146,6 +148,7 @@ public class Breakout extends GraphicsProgram {
 		add(ball); 
 	}
 	
+	/** build the rows */ 
 	private void buildRows(int x, int y) { 
 		for (int i=0; i < N_COLOR_ROWS; i++) { 
 			drawRow(x, y + brickDif*i, Color.RED);
@@ -190,6 +193,7 @@ public class Breakout extends GraphicsProgram {
 	 * Game play 
 	 */
 	
+	/** move the ball initially */
 	private void getStart() { 
 		RandomGenerator rgen = RandomGenerator.getInstance(); 
 		Y_VEL = rgen.nextDouble(2.0, 4.0);
@@ -197,7 +201,7 @@ public class Breakout extends GraphicsProgram {
 		if (rgen.nextBoolean(0.5)) X_VEL = -X_VEL;
 	}
 	
-	
+	/** moving the ball while game is working */ 
 	private void playGame() { 
 		while (gameFinished == false) { 
 			checkObjCollision(); 
@@ -213,7 +217,7 @@ public class Breakout extends GraphicsProgram {
 	 * Controlling the ball  
 	 */
 		
-	/* check if going to the right or left of screen*/ 
+	/** check if going to the right or left of screen*/ 
 	private void checkForXCollision() { 
 		if (ball.getX() < X_BARRIER_LEFT) { 
 			X_VEL = -X_VEL; 
@@ -223,7 +227,7 @@ public class Breakout extends GraphicsProgram {
 		}
 	}
 	
-	/* check if going too high or too low */ 
+	/** check if going too high or too low */ 
 	private void checkForYCollision() { 
 		if (ball.getY() < Y_BARRIER_UP) { 
 			Y_VEL = -Y_VEL; 
@@ -231,10 +235,20 @@ public class Breakout extends GraphicsProgram {
 		if (ball.getY() > Y_BARRIER_DOWN) {
 			i ++ ; 
 			if (i < 4) {
-				showLives();
+				showLives(); //update how many lives there are 
 				endTurn(); //end one move of the game  
 			}
 		}
+	}
+	
+	/* update sign showing how many lives the player has */ 
+	private void showLives() {
+		livesdisp = new GLabel("Lives: " + i);
+		if (livesdisp != null) remove(livesdisp); 
+		livesdisp.setColor(Color.WHITE);
+		livesdisp.setFont(new Font("Courier", Font.BOLD, SCORE_SIZE));
+		livesdisp.setLocation((3*getWidth()/4 - livesdisp.getWidth())/2, SCORE_OFFSET);
+		add(livesdisp); 
 	}
 	
 	/* resetting the game after ball falls to the bottom */ 
@@ -246,13 +260,15 @@ public class Breakout extends GraphicsProgram {
 	}
 	
 
-	/* check if hit the bottom of the brick */ 
+	
+	/** check if hitting an object */ 
 	private GObject getCollidingObject() { 
 		GObject objtop1 = getElementAt(ball.getX(), ball.getY());
 		GObject objtop2 = getElementAt(ball.getX() + 2*BALL_RADIUS, ball.getY());
 		GObject objbottom1 = getElementAt(ball.getX(), ball.getY() + 2*BALL_RADIUS);
 		GObject objbottom2 = getElementAt(ball.getX() + 2*BALL_RADIUS, ball.getY() + 2*BALL_RADIUS);
 		
+		//handling cases where multiple objects are 
 		if (objtop1 != null & objtop2 != null) { 
 			if (objtop1 != objtop2) objtop2 = null; 
 		}
@@ -266,6 +282,7 @@ public class Breakout extends GraphicsProgram {
 			if (objtop2 != objbottom2) objbottom2 = null; 
 		}
 		
+		// returning the right object 
 		if (objtop1 != null) return objtop1; 
 		else {
 			if (objtop2 != null) return objtop2; 
@@ -279,24 +296,26 @@ public class Breakout extends GraphicsProgram {
 		}
 	}
 	
-	
+	/* giving instructions about what to do if hit a brick */ 
 	private void checkObjCollision() { 
 		GObject collision = getCollidingObject();
 		if (collision != null 
-		&& collision != scorecard
-		&& collision != livesdisp) { 
-			if (collision == box) { 
+		&& collision != scorecard		//don't react to hitting the scoreboard
+		&& collision != livesdisp) { 	//don't react to hitting the life display
+			if (collision == box) { 	// what to do if it's the paddle 
 				if (Y_VEL > 0) Y_VEL = -Y_VEL; 
 			}
-			else {
-				getScore(); 
-				remove(collision);
-				brickcount = brickcount + 1; 
+			else {						// anything else = brick 
+				getScore(); 			// update the score 
+				remove(collision);			// remove the brick 
+				brickcount = brickcount + 1; 	//count the bricks (to end the game) 
 				safeMove();
 			}
 		} 
 	}
 	
+	/* making sure that if a brick is hit, it is really removed */
+	/* additional layer of protection against errors */ 
 	private void safeMove() {
 		GObject check = getCollidingObject();
 		if (check != null) { 
@@ -308,27 +327,20 @@ public class Breakout extends GraphicsProgram {
 		}
 	}
 	
+	/* update the score and scoreboard */ 
 	private void getScore() { 
 		score = score + BASE_SCORE; 
 		remove(scorecard); 
 		showScore(); 
 	}
 	
+	/* making the scoreboard */ 
 	private void showScore() {  
 		scorecard = new GLabel("Score: " + score);
 		scorecard.setColor(Color.WHITE);
 		scorecard.setFont(new Font("Courier", Font.BOLD, SCORE_SIZE));
 		scorecard.setLocation((getWidth()/4 - scorecard.getWidth())/2, SCORE_OFFSET);
 		add(scorecard); 
-	}
-	
-	private void showLives() {
-		livesdisp = new GLabel("Lives: " + i);
-		if (livesdisp != null) remove(livesdisp); 
-		livesdisp.setColor(Color.WHITE);
-		livesdisp.setFont(new Font("Courier", Font.BOLD, SCORE_SIZE));
-		livesdisp.setLocation((3*getWidth()/4 - livesdisp.getWidth())/2, SCORE_OFFSET);
-		add(livesdisp); 
 	}
 	
 	/* moving the ball */ 
@@ -346,6 +358,7 @@ public class Breakout extends GraphicsProgram {
 	 * Ending the game 
 	 */
 	
+	/** If the player loses */ 
 	private void stopProgram() {
 		gameFinished = true; 
 		remove(ball); 
@@ -372,14 +385,16 @@ public class Breakout extends GraphicsProgram {
 		add(gameover); 
 	}
 	
+	/** If the player wins */ 
 	private void checkIfDone() { 
-		if (brickcount == NBRICKS_PER_ROW * NBRICK_ROWS) { 
+		if (brickcount == NBRICKS_PER_ROW * NBRICK_ROWS) { //compare bricks hit v total number of bricks  
 			remove(ball); 
 			gameFinished = true; 
 			makeWinLabel(); 
 		}
 	}
 	
+	/* Show congratulations */ 
 	private void makeWinLabel() { 
 		GLabel congrats = new GLabel("Congratulations"); 
 		congrats.setFont(new Font("Courier", Font.BOLD, 30));
