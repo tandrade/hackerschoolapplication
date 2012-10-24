@@ -98,13 +98,7 @@ public class Breakout extends GraphicsProgram {
 		setup();
 		getStart(); 
 		waitForClick(); 
-		while (gameFinished == false) { 
-			checkObjCollision(); 
-			checkForXCollision();
-			checkForYCollision();
-			moveBall(); 
-			checkIfDone(); 
-		} 
+		playGame(); 
 	} 
 	
 	
@@ -189,6 +183,20 @@ public class Breakout extends GraphicsProgram {
 		add(brick); 
 	}
 		
+	/*
+	 * Game play 
+	 */
+	
+	private void playGame() { 
+		while (gameFinished == false) { 
+			checkObjCollision(); 
+			checkForXCollision();
+			checkForYCollision();
+			moveBall(); 
+			checkIfDone(); 
+		}
+	}
+	
 		
 	/*
 	 * Controlling the ball  
